@@ -94,7 +94,7 @@ header > #menu{
 }
 .content{
     display: flex;
-    width:90%;
+    width:1300px;
     margin:15px auto;
 }
 .content > .left{
@@ -121,7 +121,7 @@ header > #menu{
     width:50px;
     margin:0 10px;
 }
-.content > .left > .list > .item > span {
+.content > .left > .list > .item > a {
     margin:0 10px;
     font-weight: 600;
     color:#848484;
