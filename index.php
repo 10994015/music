@@ -153,19 +153,19 @@ if( !isset($_SESSION) ){
                 <div class="manufacturercontent">
                     <div class="item">
                         <img src="./images/0027.png" alt="">
-                        <p>場景一</p>
+                        <p>YouTube</p>
                     </div>
                     <div class="item">
                         <img src="./images/0028.png" alt="">
-                        <p>場景二</p>
+                        <p>KKBox</p>
                     </div>
                     <div class="item">
                         <img src="./images/0029.png" alt="">
-                        <p>場景三</p>
+                        <p>AppStore</p>
                     </div>
                     <div class="item">
                         <img src="./images/0030.png" alt="">
-                        <p>場景四</p>
+                        <p>MixerBox</p>
                     </div>
                 </div>
             </div>
