@@ -1,3 +1,11 @@
+<?php 
+require_once('./conn.php');
+if( !isset($_SESSION) ){
+    session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -5,68 +13,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>音樂網</title>
+    <link rel="stylesheet" type="text/css" href="./slick-1.6.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./slick-1.6.0/slick/slick-theme.css"/>
+    <title>Party Box</title>
 </head>
 <body>
-    <header>
-        <a href="index.html" id="logo"><img src="./images/logo.png"></a>
-        <nav id="nav">
-                <a href="javascript:;"><li><img src="./images/0002.png">訊息公告</li></a>
-                <a href="javascript:;"><li><img src="./images/0003.png">公司簡介</li></a>
-                <a href="javascript:;"><li><img src="./images/0004.png">會員專區</li></a>
-                <a href="javascript:;"><li><img src="./images/0005.png">代工專區</li></a>
-                <a href="javascript:;"><li><img src="./images/0006.png">客服專區</li></a>
-        </nav>
-        <img src="./images/menu.png" id="menu" alt="">
-    </header>
-    <div class="banner">
-        <img src="./images/banner.jpg" alt="">
+
+    <?php if(isset($_SESSION['name'])){ ?>
+    <div class="memberinfo">
+        <div><b>帳號</b><p><?php echo $_SESSION['username']; ?></p></div>
+        <div><b>餘額</b><p><?php echo $_SESSION['money']; ?></p></div>
+        <a href="./member_logout.php" class="logout">登出</a>
     </div>
+    <?php } ?>
+    <?php include_once('./shard.php'); ?>
+   
     <div class="content">
-        <div class="left">
-            <div class="list">
-                <div class="item">
-                    <img src="./images/0009.png" alt="">
-                    <a href="javasrupt:;">會員註冊</a>
-                </div>
-                <div class="item">
-                    <img src="./images/0012.png" alt="">
-                    <a href="javasrupt:;">新手教學</a>
-                </div>
-                <div class="item">
-                    <img src="./images/0011.png" alt="">
-                    <a href="javasrupt:;">點擊賺取</a>
-                </div>
-                <div class="item">
-                    <img src="./images/0010.png" alt="">
-                    <a href="javasrupt:;">儲存金幣</a>
-                </div>
-                <div class="item">
-                    <img src="./images/0013.png" alt="">
-                    <a href="javasrupt:;">回報客服</a>
-                </div>    
-                <div class="item">
-                    <img src="./images/0014.png" alt="">
-                    <a href="javasrupt:;">帳號保護機制</a>
-                </div>  
-            </div>
-            <div class="guide">
-                <h2>快速升級指南</h2>
-            </div>
-        </div>
+    <?php include_once('./left.php'); ?>
         <div class="center">
             <div class="hotspot">
-                <h2>熱門焦點</h2>
-                <div class="photo">
-                    <img src="./images/photo_2022-03-02_22-51-30.jpg" alt="">
-                    <img src="./images/v2-106ed01d1442c8d24387ac76ddd30971_1440w.jpg" alt="">
+                <h2>排行總榜</h2>
+                <div class="hotspotBox">
+                    <div class="title">
+                        <span class="t1">名次</span>
+                        <span class="t2">會員帳號</span>
+                        <span class="t3">名稱</span>
+                        <span class="t4">獎金累積</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">1</span>
+                        <span class="l2">sxe7654</span>
+                        <span class="l3">王O哲</span>
+                        <span class="l4">16886500</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">2</span>
+                        <span class="l2">love0207</span>
+                        <span class="l3">李O</span>
+                        <span class="l4">14259200</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">3</span>
+                        <span class="l2">coeksw2</span>
+                        <span class="l3">蘇O范</span>
+                        <span class="l4">14100000</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">4</span>
+                        <span class="l2">vkh800</span>
+                        <span class="l3">黃O藤</span>
+                        <span class="l4">13685000</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">5</span>
+                        <span class="l2">gaqc616</span>
+                        <span class="l3">王O綸</span>
+                        <span class="l4">12675040</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">6</span>
+                        <span class="l2">ssj6580</span>
+                        <span class="l3">林O祥</span>
+                        <span class="l4">12548500</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">7</span>
+                        <span class="l2">sch8vc</span>
+                        <span class="l3">周O</span>
+                        <span class="l4">12254900</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">8</span>
+                        <span class="l2">je520ac</span>
+                        <span class="l3">楊O婷</span>
+                        <span class="l4">11547000</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">9</span>
+                        <span class="l2">9654dfac</span>
+                        <span class="l3">吳O翰</span>
+                        <span class="l4">11326500</span>
+                    </div>
+                    <div class="list">
+                        <span class="l1">10</span>
+                        <span class="l2">zzpa5zz</span>
+                        <span class="l3">曹O祈</span>
+                        <span class="l4">10935100</span>
+                    </div>
                 </div>
             </div>
-            <div class="ranking">
-                <img src="./images/star.png" alt="" class="star star1">
-                <img src="./images/star.png" alt="" class="star star2">
-                <img src="./images/0008.png" alt="" class="text">
-            </div>
+            
             <div class="message">
                 <h2>訊息公告</h2>
                 <div class="messatgeItem">
@@ -111,31 +147,24 @@
                     <a href="javascript:;">More...</a>
                 </div>
             </div>
-            <div class="information">
-                <h2>資訊連結</h2>
-                <div class="linkbox">
-                    <a href="" class="link"></a>
-                    <a href="" class="link"></a>
-                    <a href="" class="link"></a>
-                </div>
-            </div>
+            
             <div class="manufacturer">
                 <h2>廠商提供</h2>
                 <div class="manufacturercontent">
                     <div class="item">
-                        <img src="./images/mexerBox.jpg" alt="">
+                        <img src="./images/0027.png" alt="">
                         <p>場景一</p>
                     </div>
                     <div class="item">
-                        <img src="./images/mexerBox.jpg" alt="">
+                        <img src="./images/0028.png" alt="">
                         <p>場景二</p>
                     </div>
                     <div class="item">
-                        <img src="./images/mexerBox.jpg" alt="">
+                        <img src="./images/0029.png" alt="">
                         <p>場景三</p>
                     </div>
                     <div class="item">
-                        <img src="./images/mexerBox.jpg" alt="">
+                        <img src="./images/0030.png" alt="">
                         <p>場景四</p>
                     </div>
                 </div>
@@ -152,7 +181,7 @@
             <div class="music">
                 <h2>音樂欣賞</h2>
                 <div class="musicContent">
-                    <img src="./images/mexerBox.jpg" alt="">
+                    <iframe  src="https://www.youtube.com/embed/9rlo5K2r3Sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="popular">
@@ -181,5 +210,6 @@
         </div>
     </footer>
     <script src="script.js"></script>
+   
 </body>
 </html>
