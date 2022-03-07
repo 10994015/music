@@ -18,7 +18,7 @@ if( !isset($_SESSION) ){
     <title>Party Go</title>
 </head>
 <body>
-
+<div id="app">
     <?php if(isset($_SESSION['name'])){ ?>
     <div class="memberinfo">
         <div><b>帳號</b><p><?php echo $_SESSION['username']; ?></p></div>
@@ -41,7 +41,7 @@ if( !isset($_SESSION) ){
                         <span class="t4">獎金累積</span>
                     </div>
                     <div class="list">
-                        <span class="l1">1</span>
+                    <span class="l1">1</span>
                         <span class="l2">sxe7654</span>
                         <span class="l3">王O哲</span>
                         <span class="l4">16886500</span>
@@ -58,48 +58,15 @@ if( !isset($_SESSION) ){
                         <span class="l3">蘇O范</span>
                         <span class="l4">14100000</span>
                     </div>
-                    <div class="list">
-                        <span class="l1">4</span>
-                        <span class="l2">vkh800</span>
-                        <span class="l3">黃O藤</span>
-                        <span class="l4">13685000</span>
+                    <div class="listbottom">
+                        <div class="list" v-for="item in user" :key="item.no">
+                            <span class="l1">{{item.no}}</span>
+                            <span class="l2">{{item.username}}</span>
+                            <span class="l3">{{item.name}}</span>
+                            <span class="l4">{{item.money}}</span>
+                        </div>
                     </div>
-                    <div class="list">
-                        <span class="l1">5</span>
-                        <span class="l2">gaqc616</span>
-                        <span class="l3">王O綸</span>
-                        <span class="l4">12675040</span>
-                    </div>
-                    <div class="list">
-                        <span class="l1">6</span>
-                        <span class="l2">ssj6580</span>
-                        <span class="l3">林O祥</span>
-                        <span class="l4">12548500</span>
-                    </div>
-                    <div class="list">
-                        <span class="l1">7</span>
-                        <span class="l2">sch8vc</span>
-                        <span class="l3">周O</span>
-                        <span class="l4">12254900</span>
-                    </div>
-                    <div class="list">
-                        <span class="l1">8</span>
-                        <span class="l2">je520ac</span>
-                        <span class="l3">楊O婷</span>
-                        <span class="l4">11547000</span>
-                    </div>
-                    <div class="list">
-                        <span class="l1">9</span>
-                        <span class="l2">9654dfac</span>
-                        <span class="l3">吳O翰</span>
-                        <span class="l4">11326500</span>
-                    </div>
-                    <div class="list">
-                        <span class="l1">10</span>
-                        <span class="l2">zzpa5zz</span>
-                        <span class="l3">曹O祈</span>
-                        <span class="l4">10935100</span>
-                    </div>
+                   
                 </div>
             </div>
             
@@ -189,9 +156,38 @@ if( !isset($_SESSION) ){
             </div>
         </div>
     </div>
-
+</div>
     <?php include_once('./footer.php'); ?>
     <script src="script.js"></script>
+    <script src="vue.js"></script>
+    <script>
+    const {reactive} = Vue;
+    const App = {
+        setup(){
+            const user = reactive( [
+                {no:4,username:'vkh800',name:'黃O藤',money:13685000},
+                {no:5,username:'gaqc616',name:'王O綸',money:12675040},
+                {no:6,username:'ssj6580',name:'林O祥',money:12548500},
+                {no:7,username:'sch8vc',name:'周O',money:12254900},
+                {no:8,username:'je520ac',name:'楊O婷',money:11547000},
+                {no:9,username:'9654dfac',name:'吳O翰',money:11326500},
+                {no:10,username:'zzpa5zz',name:'曹?祈',money:10935100},
+                {no:4,username:'vkh800',name:'黃O藤',money:13685000},
+                {no:5,username:'gaqc616',name:'王O綸',money:12675040},
+                {no:6,username:'ssj6580',name:'林O祥',money:12548500},
+                {no:7,username:'sch8vc',name:'周O',money:12254900},
+                {no:8,username:'je520ac',name:'楊O婷',money:11547000},
+                {no:9,username:'9654dfac',name:'吳O翰',money:11326500},
+                {no:10,username:'zzpa5zz',name:'曹?祈',money:10935100},
+                
+            ])
+            return {user};
+        },
+    };
+    Vue.createApp(App).mount('#app')
+        
+        
+    </script>
    
 </body>
 </html>

@@ -19,7 +19,7 @@
     font-size: 20px;
     cursor: pointer;
 }
-.orderModule{
+.orderModule,.taskModule,.urlModule{
     position: relative;
     position: fixed;
     top: 0;
@@ -29,7 +29,9 @@
     display: none;
 
 }
-.orderModule > .back {
+.orderModule > .back,
+.taskModule > .back ,
+.urlModule > .back {
     position: absolute;
     top: 0;
     left:0;
@@ -37,7 +39,9 @@
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
 }
-.orderModule > .box {
+.orderModule > .box, 
+.taskModule > .box, 
+.urlModule > .box{
     position: absolute;
     top: 50%;
     left:50%;
@@ -51,7 +55,9 @@
     align-items: center;
     flex-direction: column;
 }
-.orderModule > .box > .boxheader{
+.orderModule > .box > .boxheader,
+.urlModule > .box > .boxheader,
+.taskModule > .box > .boxheader{
     position: absolute;
     top:10px;
     left:50%;
@@ -64,7 +70,9 @@
     font-weight: 600;
     border-radius: 8px;
 }
-.orderModule > .box > .boxheader > i{
+.orderModule > .box > .boxheader > i,
+.urlModule > .box > .boxheader > i,
+.taskModule > .box > .boxheader > i{
     position: absolute;
     top: 50%;
     right: 15px;
@@ -72,7 +80,9 @@
     transform: translateY(-50%);
     cursor: pointer;
 }
-.orderModule > .box > .boxbottom{
+.orderModule > .box > .boxbottom,
+.urlModule > .box > .boxbottom,
+.taskModule > .box > .boxbottom{
     position: absolute;
     bottom: 20px;
     left:50%;
@@ -82,7 +92,9 @@
     display: flex;
     justify-content: space-between;
 }
-.orderModule > .box > .boxbottom > a{
+.orderModule > .box > .boxbottom > a,
+.urlModule > .box > .boxbottom > a,
+.taskModule > .box > .boxbottom > a{
     display: block;
     width:80px;
     height: 35px;
@@ -92,4 +104,28 @@
     line-height: 35px;
     font-weight: 600;
     color:#222;
+}
+.taskModule > .box > .boxbottom{
+    justify-content: center;
+}
+.taskModule > .box  .taskBox{
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    grid-template-rows: repeat(2, 40px);
+    grid-column-gap: 20px;
+   grid-row-gap: 10px;
+
+
+}
+#taskBtn.disable{
+    background-color: #ccc;
+    color:#999;
+    cursor: default;
+}
+.taskModule > .box  .taskBox > .task {
+    width:100%;
+    height: 100%;
+    background-color: #ccc;
+    cursor: pointer;
+    
 }

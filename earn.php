@@ -40,7 +40,33 @@ if (isset($_SESSION['name'])) {
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
             <h4>是否轉入點數賺取?<br/>點數將轉入指定網址<br/>(操作時間:5~10分鐘)</h4>
-            <div class="boxbottom"><a href="./orders.php">是</a><a href="javascript:;" class="orderClose">否</a></div>
+            <div class="boxbottom"><a href="javascript:;" id="orderBtn">是</a><a href="javascript:;" class="orderClose">否</a></div>
+        </div>
+    </div>
+    <div class="taskModule" id="taskModule" >
+        <div class="back"></div>
+        <div class="box">
+        <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
+            <div class="taskBox">
+                <div class="task"></div>
+                <div class="task"></div>
+                <div class="task"></div>
+                <div class="task"></div>
+                <div class="task"></div>
+                <div class="task"></div>
+                <div class="task"></div>
+                <div class="task"></div>
+            </div>
+            <div class="boxbottom"><a href="javascript:;" id="taskBtn" class="disable">抽取</a></div>
+        </div>
+    </div>
+
+    <div class="urlModule" id="urlModule">
+        <div class="back"></div>
+        <div class="box">
+            <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
+            <h4>抽取個人任務為:XXXX</h4>
+            任務網站:<a href="https://bit.ly/372UlWl ">https://bit.ly/372UlWl </a>
         </div>
     </div>
     <?php include_once('./footer.php'); ?>

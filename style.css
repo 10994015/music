@@ -257,7 +257,7 @@ header > #menu{
     background-color: transparent;
     color:#fff;
 }
-.content > .center > .hotspot > .hotspotBox > .list{
+.content > .center > .hotspot > .hotspotBox  .list{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -265,41 +265,57 @@ header > #menu{
     width:100%;
     border:1px #ccc solid;
 }
-.content > .center > .hotspot > .hotspotBox > .list:nth-child(odd){
+.content > .center > .hotspot > .hotspotBox  .list:nth-child(odd){
     background-color: #f1f1f1;
 }
-.content > .center > .hotspot > .hotspotBox > .list:nth-child(even){
+.content > .center > .hotspot > .hotspotBox  .list:nth-child(even){
     background-color: #E8FAF6;
 }
-.content > .center > .hotspot > .hotspotBox > .list > span{
+.content > .center > .hotspot > .hotspotBox  .list > span{
     text-align: center;
     height: 35px;
     padding: 5px 0;
     color:#555;
 }
-.content > .center > .hotspot > .hotspotBox > .list > span.l1{
+.content > .center > .hotspot > .hotspotBox  .list > span.l1{
     width:50px;
 }
-.content > .center > .hotspot > .hotspotBox > .list > span.l2{
+.content > .center > .hotspot > .hotspotBox  .list > span.l2{
     width:250px;
 }
-.content > .center > .hotspot > .hotspotBox > .list > span.l3{
+.content > .center > .hotspot > .hotspotBox  .list > span.l3{
     width:200px;
 }
-.content > .center > .hotspot > .hotspotBox > .list > span.l4{
+.content > .center > .hotspot > .hotspotBox  .list > span.l4{
     width:200px;
 }
-.content > .center > .hotspot > .hotspotBox > .title > span.t1{
+.content > .center > .hotspot > .hotspotBox  .title > span.t1{
     width:45px;
 }
-.content > .center > .hotspot > .hotspotBox > .title > span.t2{
+.content > .center > .hotspot > .hotspotBox  .title > span.t2{
     width:245px;
 }
-.content > .center > .hotspot > .hotspotBox > .title > span.t3{
+.content > .center > .hotspot > .hotspotBox  .title > span.t3{
     width:195px;
 }
-.content > .center > .hotspot > .hotspotBox > .title > span.t4{
+.content > .center > .hotspot > .hotspotBox  .title > span.t4{
     width:195px;
+}
+.content > .center > .hotspot > .hotspotBox > .listbottom {
+    width:100%;
+    height: 245px;
+    overflow: hidden;
+}
+.content > .center > .hotspot > .hotspotBox > .listbottom > .list{
+    animation: user 10s infinite linear;
+}
+@keyframes user {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1000%);
+    }
 }
 
 .content > .center > .ranking {

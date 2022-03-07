@@ -65,7 +65,6 @@ if(isset($_SESSION['name'])){
                 // $upuser =  $row_RS['username'];
             }
         }
-    }
 
 ?>
 
@@ -139,3 +138,11 @@ if(isset($_SESSION['name'])){
     <script src="script.js"></script>
 </body>
 </html>
+
+    
+<?php
+}else{
+
+?>
+<?php include_once('./error.php') ?>
+<?php } ?>
