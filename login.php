@@ -2,6 +2,38 @@
 session_start();
 include_once('./conn.php');
 
+if(isset($_GET['mailok']) && $_GET['mailok']==1){
+    try{
+         $upuser = $_GET['mem_usercode'];
+         $mem_mail = $_GET['mem_mail'];
+
+         $sql_str ="UPDATE member SET level  =2         
+                    WHERE username =:mem_mail";
+         $create_table = "CREATE TABLE IF NOT EXISTS `$upuser` (id int(5) auto_increment, down varchar(100), primary key (id))";
+         $create_user = "INSERT INTO `$upuser` (down) VALUES (:mem_mail3)";
+
+          $stmt = $conn ->prepare($sql_str);
+          $stmt2 = $conn ->prepare($create_table);
+          $stmt3 = $conn ->prepare($create_user);
+          
+          //接受資料
+          
+  
+          $stmt -> bindParam(':mem_mail' ,$mem_mail);
+          $stmt3 -> bindParam(':mem_mail3' ,$mem_mail);
+
+          
+
+          $stmt ->execute();
+          $stmt2 ->execute();
+          $stmt3 ->execute();
+  
+          header('Location:./login.php');
+    }
+    catch(PDOException $e){
+      die('Error!!:'.$e->getMessage());
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +43,95 @@ include_once('./conn.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>音樂網</title>
+    <title>Party Go</title>
+    <style>
+        .login> form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:45%;
+            height: 300px;
+            background-image: url('./images/CC02.png');
+            margin:0 10px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding-top: 30px;
+        }
+        .login> form >.loimg01{
+            position: absolute;
+            top: 30px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .login> form >input{
+            width:200px;
+            height: 30px;
+            margin:10px 0;
+            padding: 0 5px;
+            outline: none;
+            border:none;
+            border:1px #ccc solid;
+            border-radius: 6px;
+        }
+        .login> form > a{
+            color:#777;
+            font-weight: 600;
+        }
+        .login> form >input[type="submit"]{
+            border-radius: 8px;
+            background-color: #D02132;
+            height: 40px;
+            color:#fff;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 3px 5px #000;
+            outline: none;
+            border:none;
+            font-size: 18px;
+        }
+        .login{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./images/CC01.png');
+            background-size: cover;
+            width:100%;
+            height: 350px;
+            margin:0 auto;
+            margin-left: 20px;
+        }
+        .login >.register{
+            width:45%;
+            height: 300px;
+            background-image: url('./images/CC02.png');
+            margin:0 10px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;flex-direction: column;
+            position: relative;
+        }
+        .login >.register > a{
+            color:#000;
+            font-weight: 600;
+            font-size: 21px;
+        }
+        .login >.register > .reimg01{
+            position: absolute;
+            top: 30px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .login >.register > .reimg02{
+            margin-bottom: 15px;
+        }
+        .login >.register >a > img{
+            width:210px;
+        }
+    </style>
 </head>
 <body>
     
@@ -20,32 +140,22 @@ include_once('./conn.php');
     <?php include_once('./left.php'); ?>
         <div class="login">
             <form action="./member_check.php" method="POST">
+                <img src="./images/CC10.png"  class="loimg01">
                 <input type="text" name="username" class="mem_mail" placeholder="請輸入帳號...." required/>
                 <input type="password" name="pwd" class="mem_pwd" placeholder="請輸入密碼...." required/>
+                <a href="###">忘記密碼?</a>
                 <input type="submit" class="submit-btn" value="登入" />
             </form>
+            <div class="register">
+                <img src="./images/CC03.png" alt="" class="reimg01">
+                <img src="./images/CC09.png" alt="" class="reimg02">
+                <a href="./register.php"><img src="./images/CC04.png" alt=""></a>
+            </div>
         </div>
+        
     </div>
 
-    <footer>
-        <h2>聯繫我們</h2>
-        <p>成立於2018年7月</p>
-        <p>若您想成為Party Box的合作夥伴，或是你想加入Party Box成為我們的一員，都歡迎透過客服團隊聯繫我們。</p>
-        <div class="footerlist">
-            <div class="list">
-                <h3>創造價值</h3>
-                <p>除了用戶僅需要以小資本額即可參與之外<br/>資產比例用來從而增加收入<br/>並且減少市場上詐欺或詐騙等非法案例</p>
-            </div>
-            <div class="list">
-                <h3>隱私權聲明</h3>
-                <p>我們努力為客戶保護隱私並提供一個最安全的遊戲平台<br/>在此網站蒐集的資料會為您提供最卓越的服務<br/>我們不會您的個人資料給第三方<br/>對於有機會接觸客戶的個人資料和協助夥伴<br/>也必須遵守我們訂立的隱私保密規則</p>
-            </div>
-            <div class="list">
-                <h3>幫助中心</h3>
-                <p>常見問題項目，及其他問題的解答和協助;<br/>或有任何問題，請與24H線上克服聯繫。</p>
-            </div>
-        </div>
-    </footer>
+    <?php include_once('./footer.php'); ?>
     <script src="script.js"></script>
 </body>
 </html>

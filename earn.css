@@ -6,7 +6,7 @@
     margin: 0 auto;
     margin-top: 50px;
 }
-.earn > a{
+.earn > a, .earn > div{
     display: block;
     width:150px;
     height: 150px;
@@ -17,4 +17,79 @@
     line-height: 150px;
     font-weight: 600;
     font-size: 20px;
+    cursor: pointer;
+}
+.orderModule{
+    position: relative;
+    position: fixed;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    display: none;
+
+}
+.orderModule > .back {
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+.orderModule > .box {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:360px;
+    height: 220px;
+    background-color: #f1f1f1;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.orderModule > .box > .boxheader{
+    position: absolute;
+    top:10px;
+    left:50%;
+    transform: translateX(-50%);
+    width:320px;
+    height: 40px;
+    background-color: #D6DCE5;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.orderModule > .box > .boxheader > i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: 24px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.orderModule > .box > .boxbottom{
+    position: absolute;
+    bottom: 20px;
+    left:50%;
+    width:200px;
+    height: auto;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+.orderModule > .box > .boxbottom > a{
+    display: block;
+    width:80px;
+    height: 35px;
+    background-color: #D6DCE5;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 600;
+    color:#222;
 }
