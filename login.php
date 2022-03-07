@@ -8,17 +8,19 @@ if(isset($_GET['mailok']) && $_GET['mailok']==1){
         if(isset($_GET['mem_usercode']) && $_GET['mem_usercode']!=""){
             $mem_mail = $_GET['mem_mail'];
             $upuser = $_GET['mem_usercode'];
+            $username = $_GET['username'];
             $sql_str ="UPDATE member SET level  =2         
             WHERE mail =:mem_mail";
             $create_table = "CREATE TABLE IF NOT EXISTS `$upuser` (id int(5) auto_increment, down varchar(100), primary key (id))";
-            $create_user = "INSERT INTO `$upuser` (down) VALUES (:mem_mail3)";
+            $create_user = "INSERT INTO `$upuser` (down) VALUES (:username)";
             
             $stmt = $conn ->prepare($sql_str);
             $stmt2 = $conn ->prepare($create_table);
             $stmt3 = $conn ->prepare($create_user);
 
             $stmt -> bindParam(':mem_mail' ,$mem_mail);
-            $stmt3 -> bindParam(':mem_mail3' ,$mem_mail);
+            // $stmt3 -> bindParam(':mem_mail3' ,$mem_mail);
+            $stmt3 -> bindParam(':username' ,$username);
 
             $stmt ->execute();
             $stmt2 ->execute();

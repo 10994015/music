@@ -25,7 +25,7 @@ if(isset($_POST['MM_process']) && $_POST['MM_process']=='addmem'){
 
         $stmt ->execute();
 
-        $result2 = sendMail($mem_mail,$mem_name,$mem_chkcode,$mem_usercode);
+        $result2 = sendMail($mem_mail,$mem_name,$mem_chkcode,$mem_usercode,$username);
 
         $msg =1;
 
@@ -90,13 +90,13 @@ if(isset($_GET['msg']) && $_GET['msg']==0){
 
 
 //負責發信的自定函式(收件者信箱, 收件者名稱, 確認信的驗證碼)
-function sendMail($mailto,$name,$chkcode,$mem_usercode){
+function sendMail($mailto,$name,$chkcode,$mem_usercode,$username){
  
     $subject = "=?UTF-8?B?".base64_encode('Party Go會員功能啟用通知')."?=";
     $content = $name.'您好, 感謝申請會員<br>'
               .'Party Go會員功能啟用通知<br>'
               .'請點選<a href="localhost/partybox/login.php?mailok=1&mem_mail='
-              .$mailto.'&mem_chkcode='.$chkcode.'&mem_usercode='.$mem_usercode.'">此連結回覆確認信箱</a><br>'
+              .$mailto.'&mem_chkcode='.$chkcode.'&username='.$username.'&mem_usercode='.$mem_usercode.'">此連結回覆確認信箱</a><br>'
               .'此信件為系統自動發送, 請勿點選回覆信件'; 
    
     $header = "From: cagletien4@gmail.com\r\n";

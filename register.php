@@ -46,7 +46,7 @@ if(isset($_GET['code'])){
         <form method="post" action="./mem_addmem_ok.php" class="mem-addmem-area">
             <input type="text" name="username" class="username" 
                 placeholder="請輸入帳號..." required>
-                <div class="msg_username">sdfdf</div>
+                <div class="msg_username"></div>
             <input type="text" name="mem_mail" class="mem_mail" 
                 placeholder="請輸入EMail..." required>
                 <div class="msg_mail"></div>

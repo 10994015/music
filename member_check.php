@@ -24,8 +24,6 @@ try {
       $_SESSION['username']  = $row_RS['username'];   //將會員名稱記錄到SESSION系統變數
       $_SESSION['money']  = $row_RS['money'];   //將會員名稱記錄到SESSION系統變數
     //   $_SESSION['mem_level'] = $row_RS['mem_level'];  //將會員等級記錄到SESSION系統變數
-    echo "sess=>".$_SESSION['id'];
-    echo "sess=>".$_SESSION['name'];
       $url = './';  //登入成功要前往的位址
    
     }else{
