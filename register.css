@@ -1,0 +1,142 @@
+ .register{
+            width:700px;
+            height: 600px;
+            margin:0 auto;
+            margin-left: 20px;
+            background: url('./images/CC02.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+    .register > form {
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: flex-start;
+    }
+    .register > form > input {
+        width:300px;
+        height: 35px;
+        outline: none;
+        border:none;
+        border:1px #ccc solid;
+        margin:5px 0;
+        padding:0 10px;
+        border-radius: 6px;
+    }
+    .register > img{
+        position: absolute;
+        top: 30px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .register > form >img {
+        width:120px;
+        margin:5px 0;
+    }
+    .register > form > a{
+        color:#333;
+    }
+    .register > form >input[type="submit"]{
+        border-radius: 8px;
+            background-color: #D02132;
+            height: 40px;
+            color:#fff;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 3px 5px #000;
+            outline: none;
+            border:none;
+            font-size: 18px;
+    }
+    .username{
+        position: absolute;
+        top:100px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .mem_mail{
+        position: absolute;
+        top: 160px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .mem_name{
+        position: absolute;
+        top: 220px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .mem_pwd{
+        position: absolute;
+        top: 280px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .confirm_pwd{
+        position: absolute;
+        top: 340px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .chkcode{
+        position: absolute;
+        top: 400px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .chkcodeimg{
+        position: absolute;
+        top: 460px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .re-chkcode{
+        position: absolute;
+        top: 500px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .submit-btn{
+        position: absolute;
+        top: 530px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .msg_username{
+        position: absolute;
+        top: 140px;
+        left:50%;
+        width:300px;
+        transform: translateX(-50%);
+    }
+    .msg_mail{
+        position: absolute;
+        top: 200px;
+        left:50%;
+        width:300px;
+        transform: translateX(-50%);
+    }
+    .msg_pwd{
+        position: absolute;
+        top: 320px;
+        left:50%;
+        width:300px;
+        transform: translateX(-50%);
+    }
+    .msg_confirm_pwd{
+        position: absolute;
+        top: 380px;
+        left:50%;
+        width:300px;
+        transform: translateX(-50%);
+    }
+    .msg_chkcode{
+        position: absolute;
+        top: 440px;
+        left:50%;
+        transform: translateX(-50%);
+    }

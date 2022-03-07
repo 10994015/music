@@ -1,18 +1,21 @@
 $(document).ready(function(){	
   //變數設定為各個要被檢查的物件------------------------------------------
-  var chk_mail         = $(".mem_mail");      //帳號
+  var chk_mail         = $(".mem_mail");      //email
+  var chk_username     = $(".username");      //帳號
   var chk_pwd          = $(".mem_pwd");       //密碼
   var chk_confirm_pwd  = $(".confirm_pwd");   //密碼再次輸入
   var chk_code         = $(".chkcode");       //驗證碼的輸入
 
   //變數設定為各個檢查後的結果--------------------------------------------
   var test_mail        = false;  //設定帳號的輸入是否正確,預設為否
+  var test_username    = false;  //設定帳號的輸入是否正確,預設為否
   var test_pwd         = false;  //設定密碼的輸入是否正確,預設為否
   var test_confirm_Pwd = false;	 //設定確認密碼的輸入是否正確,預設為否
   var test_chk_code    = false;  //設定驗證碼的輸入是否正確,預設為否
 
   //變數設定為 msg 顯示的位置--------------------------------------------
   var msg_mail         = $('.msg_mail');
+  var msg_username     = $('.msg_username');
   var msg_pwd          = $('.msg_pwd');
   var msg_confirm_pwd  = $('.msg_confirm_pwd');
   var msg_chkcode      = $('.msg_chkcode');
@@ -24,6 +27,27 @@ $(document).ready(function(){
   var m0               = '<span class="str0"></span>';
 
   //==========檢測帳號=================================================================
+
+  chk_username.bind("blur",function(){
+    if($(this).val()!=""){
+      var chk_username_val = $(this).val();	
+      $.ajax({
+        url   : 'mem_chk_username.php'
+        ,type :'POST'
+        ,data :{ mem_username:chk_username_val }
+      }).done(function(msg){
+        if(msg==1){   //當收到的值==1, 表示資料庫中已有此帳號
+          $(msg_username).html('帳號已存在,不能使用！');
+          test_username = false;
+          
+        }else{
+          $(msg_username).html(msg_blue_start+'帳號可以使用！'+msg_blue_end);
+          test_username = true;
+          
+        }
+      })
+    }
+  })
   //當游標離開帳號欄位時
   chk_mail.bind("blur",function(){
     //假如欄位內的值不是空的
@@ -50,14 +74,12 @@ $(document).ready(function(){
           //mem_chk_member.php完成工作會回傳值, 以 msg 收下回傳的值
           //console.log('=========='+msg);
           if(msg==1){   //當收到的值==1, 表示資料庫中已有此帳號
-            $(msg_mail).html('帳號已存在,不能使用！');
+            $(msg_mail).html('此Email已註冊過');
             test_mail = false;
-            console.log("帳號以存在");
             
           }else{
             $(msg_mail).html(msg_blue_start+'帳號可以使用！'+msg_blue_end);
             test_mail = true;
-            console.log("帳號可以使用");
             
           }
         });//done end ajax end
@@ -194,16 +216,18 @@ $(document).ready(function(){
   //==========按下註冊鈕時的判斷==========================================
   $(".mem-addmem-area").bind("submit",function(){	
     //當4個test變數皆為true, 表示各欄位的檢查皆過關
-    if( test_mail && test_pwd && test_confirm_Pwd && test_chk_code ){
+    if( test_username && test_mail && test_pwd && test_confirm_Pwd && test_chk_code ){
       return true;		//傳回true, 表示進行submit的工作, 也就示傳出表單
     }
     else{	//否則表示有任何一個錯誤時, 顯示訊息提示
       var result = '';
-      var msg2_mail        = '帳號必須以EMail格式申請或已有人使用！\r';
+      var msg2_username    = '此帳號已有人使用！請換一組帳號註冊！\r';
+      var msg2_mail        = 'Email必須以Email格式申請或已有人使用！\r';
       var msg2_pwd         = '密碼必須以6~20個字元填寫！\r';
       var msg2_confirm_pwd = '確認密碼必須 = 密碼的輸入！\r';
       var msg2_chkcode     = '必須依左下方的數字圖案填寫驗證碼！\r';
 
+      if(!test_username)    { result+=msg2_username;    }
       if(!test_mail)        { result+=msg2_mail;        }
       if(!test_pwd)         { result+=msg2_pwd;         }
       if(!test_confirm_Pwd) { result+=msg2_confirm_pwd; }

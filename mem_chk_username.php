@@ -9,14 +9,14 @@ require_once('./conn.php');
 try{
     //準備SQL語法
     $sql_str = "SELECT * FROM member
-    WHERE mail = :mem_mail";
+    WHERE username = :mem_username";
     $stmt = $conn -> prepare($sql_str);
     //接收資料
-    $username = $_POST['mem_mail'];
+    $username = $_POST['mem_username'];
   
 
     //綁定資料
-    $stmt -> bindParam(':mem_mail',$username);
+    $stmt -> bindParam(':mem_username',$username);
   
 
     //執行

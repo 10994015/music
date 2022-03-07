@@ -4,11 +4,12 @@ require_once('./conn.php');
 
 if(isset($_POST['MM_process']) && $_POST['MM_process']=='addmem'){
     try{
-        $sql_str = "INSERT INTO member ( name,username,pwd,chkcode,up)
-                      VALUES (:mem_name,:mem_mail,:mem_pwd,:mem_chkcode,:mem_usercode)";
+        $sql_str = "INSERT INTO member ( name,username,mail,pwd,chkcode,up)
+                      VALUES (:mem_name,:username,:mem_mail,:mem_pwd,:mem_chkcode,:mem_usercode)";
         $stmt = $conn -> prepare($sql_str);
 
         $mem_name = $_POST['mem_name'];
+        $username = $_POST['username'];
         $mem_mail = $_POST['mem_mail'];
         $mem_pwd = $_POST['mem_pwd'];
         $mem_usercode = $_POST['usercode'];
@@ -17,6 +18,7 @@ if(isset($_POST['MM_process']) && $_POST['MM_process']=='addmem'){
 
         $stmt -> bindParam(':mem_name' ,$mem_name);
         $stmt -> bindParam(':mem_mail' ,$mem_mail);
+        $stmt -> bindParam(':username' ,$username);
         $stmt -> bindParam(':mem_pwd' ,$mem_pwd);
         $stmt -> bindParam(':mem_chkcode' ,$mem_chkcode);
         $stmt -> bindParam(':mem_usercode' ,$mem_usercode);

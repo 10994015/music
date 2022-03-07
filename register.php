@@ -33,138 +33,8 @@ if(isset($_GET['code'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
     <title>Party Go</title>
-    <style>
-        .register{
-            width:700px;
-            height: 600px;
-            margin:0 auto;
-            margin-left: 20px;
-            background: url('./images/CC02.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-    .register > form {
-       display: flex;
-       flex-direction: column;
-       justify-content: flex-start;
-       align-items: flex-start;
-    }
-    .register > form > input {
-        width:300px;
-        height: 35px;
-        outline: none;
-        border:none;
-        border:1px #ccc solid;
-        margin:5px 0;
-        padding:0 10px;
-        border-radius: 6px;
-    }
-    .register > img{
-        position: absolute;
-        top: 30px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .register > form >img {
-        width:120px;
-        margin:5px 0;
-    }
-    .register > form > a{
-        color:#333;
-    }
-    .register > form >input[type="submit"]{
-        border-radius: 8px;
-            background-color: #D02132;
-            height: 40px;
-            color:#fff;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 3px 5px #000;
-            outline: none;
-            border:none;
-            font-size: 18px;
-    }
-    .mem_mail{
-        position: absolute;
-        top: 100px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .mem_name{
-        position: absolute;
-        top: 160px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .mem_pwd{
-        position: absolute;
-        top: 220px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .confirm_pwd{
-        position: absolute;
-        top: 280px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .chkcode{
-        position: absolute;
-        top: 340px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .chkcodeimg{
-        position: absolute;
-        top: 380px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .re-chkcode{
-        position: absolute;
-        top: 440px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .submit-btn{
-        position: absolute;
-        top: 500px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    .msg_mail{
-        position: absolute;
-        top: 140px;
-        left:50%;
-        width:300px;
-        transform: translateX(-50%);
-    }
-    .msg_pwd{
-        position: absolute;
-        top: 260px;
-        left:50%;
-        width:300px;
-        transform: translateX(-50%);
-    }
-    .msg_confirm_pwd{
-        position: absolute;
-        top: 320px;
-        left:50%;
-        width:300px;
-        transform: translateX(-50%);
-    }
-    .msg_chkcode{
-        position: absolute;
-        top: 420px;
-        left:50%;
-        transform: translateX(-50%);
-    }
-    </style>
 </head>
 <body>
     
@@ -174,9 +44,11 @@ if(isset($_GET['code'])){
         <div class="register">
             <img src="./images/CC04.png" alt="">
         <form method="post" action="./mem_addmem_ok.php" class="mem-addmem-area">
-
+            <input type="text" name="username" class="username" 
+                placeholder="請輸入帳號..." required>
+                <div class="msg_username">sdfdf</div>
             <input type="text" name="mem_mail" class="mem_mail" 
-                placeholder="請輸入EMail為帳號..." required>
+                placeholder="請輸入EMail..." required>
                 <div class="msg_mail"></div>
 
             <input type="text" name="mem_name" class="mem_name" 
