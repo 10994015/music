@@ -3,7 +3,7 @@
                 <div class="item">
                     <img src="./images/0009.png" alt="">
                     <?php if(!isset($_SESSION['name'])){ ?>
-                    <a href="./login.php">會員註冊</a>
+                    <a href="./login.php">會員登入</a>
                     <?php }else{ ?>
                     <a href="./">首頁</a>
                     <?php  } ?>
