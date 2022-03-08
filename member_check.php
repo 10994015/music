@@ -28,7 +28,7 @@ try {
    
     }else{
       //登入失敗..............登入失敗要前往的位址，並加上msg參數
-      $url = './?page=mem_login&msg=1';
+      $url = './login.php?msg=1';
     }
    
     header('Location:'.$url);  

@@ -41,6 +41,10 @@ if(isset($_GET['mailok']) && $_GET['mailok']==1){
       die('Error!!:'.$e->getMessage());
     }
   }
+
+  if(isset($_GET['msg']) && $_GET['msg']==1){
+      echo "<script>alert('登入失敗!')</script>";
+  }
 ?>
 
 <!DOCTYPE html>

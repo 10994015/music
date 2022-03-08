@@ -607,3 +607,40 @@ footer .footerlist > .list > p {
     text-align: center;
     letter-spacing:1px;
 }
+
+@media screen and (max-width:1400px){
+    .content{
+        flex-direction: column;
+        margin:15px auto;
+        width:100%;
+        margin:auto;
+    }
+    .content > .left > .guide{
+        display: none;
+    }
+    .content > .center{
+        width:90%;
+        margin:auto;
+    }
+    .content > .center > .message{
+        width:100%;
+    }
+    .content > .center > .manufacturer{
+        width:100%;
+    }
+    .content > .right > .smallImg{
+        float: left;
+        width:50%;
+    }
+    .content > .right > .music{
+        clear: both;
+    }
+}
+@media screen and (max-width:1250px){
+    footer .footerlist{
+        flex-direction: column;
+    }
+    footer .footerlist > .list{
+        margin:30px 0;
+    }
+}
