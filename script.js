@@ -1,5 +1,7 @@
 const menu = document.getElementById('menu');
 const nav = document.getElementById('nav');
+console.log(menu);
+
 menu.addEventListener("click", ()=>{
     nav.classList.toggle('active');
     console.log(nav.classList[0] == "active");
@@ -56,3 +58,8 @@ for(let t=0;t<task.length;t++){
 for(let i=0;i<orderClose.length;i++){
     orderClose[i].addEventListener('click',orderCloseFn);
 }
+
+
+
+
+
