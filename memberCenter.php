@@ -50,8 +50,6 @@ if(isset($_SESSION['name'])){
                     array_push($moneyArr,$money);
                 }
             }
-            echo $usertotal;
-            print_r($moneyArr);
 
         }else{
             $sql = "SELECT * FROM member WHERE username = :membername";

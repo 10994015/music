@@ -27,6 +27,18 @@ if (isset($_SESSION['name'])) {
             height: 350px;
             margin: 15px 0;
         }
+        @media screen and (max-width:1400px){
+            .content > .contact{
+                width:100%;
+            }
+        }
+        @media screen and (max-width:400px){
+            .content > .contact > img{
+            width:250px;
+            height: 250px;
+            margin: 15px 0;
+        }
+        }
     </style>
 </head>
 <body>

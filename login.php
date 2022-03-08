@@ -31,7 +31,7 @@ if(isset($_GET['mailok']) && $_GET['mailok']==1){
             $sql_str ="UPDATE member SET level  =2         
                        WHERE mail =:mem_mail";
              $stmt = $conn ->prepare($sql_str);
-             //接受資料
+             
              $stmt -> bindParam(':mem_mail' ,$mem_mail);
              $stmt ->execute();
         }

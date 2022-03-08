@@ -129,3 +129,47 @@
     cursor: pointer;
     
 }
+@media screen and (max-width:1400px){
+    .earn {
+        align-items: center;
+        justify-items: center;  
+        justify-content: center;
+        align-content: center;
+    }
+}
+@media screen and (max-width:768px){
+    .earn {
+        display: grid;
+        grid-template-columns: 200px 200px ;
+        grid-template-rows: 200px 200px 200px 200px;
+        width:100%;
+        align-items: center;
+        justify-items: center;  
+        justify-content: center;
+        align-content: center;
+
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width:768px){
+    .earn {
+        display: grid;
+        grid-template-columns: 150px 150px ;
+        grid-template-rows: 150px 150px 150px 150px;
+        
+    }
+    .earn > a, .earn > div{
+        display: block;
+        width:130px;
+        height: 130px;
+        border-radius: 20px;
+        background-color: #1484c4;
+        color:#fff;
+        text-align: center;
+        line-height: 130px;
+        font-weight: 600;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}

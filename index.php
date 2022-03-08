@@ -89,21 +89,7 @@ if( !isset($_SESSION) ){
                         <div class="date">22/02/20</div>
                         <h4 class="title">2月24日(四)維護公告</h4>
                     </a>
-                    <a href="javascript:;" class="list">
-                        <h4 class="class">活動</h4>
-                        <div class="date">22/02/20</div>
-                        <h4 class="title">2月24日(四)維護公告</h4>
-                    </a>
-                    <a href="javascript:;" class="list">
-                        <h4 class="class">活動</h4>
-                        <div class="date">22/02/20</div>
-                        <h4 class="title">2月24日(四)維護公告</h4>
-                    </a>
-                    <a href="javascript:;" class="list">
-                        <h4 class="class">活動</h4>
-                        <div class="date">22/02/20</div>
-                        <h4 class="title">2月24日(四)維護公告</h4>
-                    </a>
+                    
                 </div>
                 <div class="more">
                     <a href="javascript:;">More...</a>
