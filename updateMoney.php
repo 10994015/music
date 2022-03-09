@@ -4,11 +4,15 @@ include_once('./conn.php');
 if(isset($_SESSION['name'])){
     
     try {
-        $sql_str = "SELECT * FROM member ORDER BY id ASC";
-       
-        $RS_member = $conn -> query($sql_str);
-        //返回$RS_mb資料集的列數，也就是記錄筆數
-        $total_member = $RS_member -> rowCount();
+       if(isset($_GET['user']) && $_GET['user'] !== ""){
+           $user = $_GET['user'];
+           $sql_str = "SELECT * FROM member WHERE username = :user";
+           $stmt = $conn->prepare($sql_str);
+           $stmt->bindParam(':user',$user);
+           $stmt->execute();
+           $row_RS_mb = $stmt->fetch(PDO::FETCH_ASSOC);
+       }
+
       } 
       catch ( PDOException $e ){
         die("ERROR!!!: ". $e->getMessage());
@@ -43,30 +47,22 @@ if(isset($_SESSION['name'])){
         <a href="./member_logout.php" class="logout">登出</a>
     </div>
     <?php } ?>
-<?php include_once('./shard.php'); ?>
     <div class="content">
-    <?php include_once('./left.php'); ?>
     <?php if($_SESSION['mem_level'] > 2) {?>
        <div class="cms">
-        <h1><?php echo "會員總數:".$total_member;?></h1>
-       <?php foreach($RS_member as $item){ ?>
-            <div class="userlist">
-                <a href="./account.php?user=<?php echo $item['username'];?>" class="list">
-                    <p>帳號:<?php echo $item['username']; ?></p>
-                    <p>餘額:<?php echo $item['money']; ?></p>
-                    <p>上限:<?php if( $item['up']==NULL){echo "無";}else{echo $item['up'];} ?></p>
-                    <p>網址:http://www.partyboxxxxxx.com/register/?code=<?php echo $item['chkcode']; ?></p>
-                </a>
-                <a href="./updateMoney.php?user=<?php echo $item['username'];?>">編輯餘額</a>
-            </div>
-        <?php } ?>
+        <h1>編輯餘額</h1>
+       <form action="updateMoney_check.php"" method="post">
+           <input type="text" placeholder="餘額..." name="money" value="<?php echo $row_RS_mb['money'];?>">
+           <input type="submit" value="編輯">
+           <input type="hidden" name="username" value="<?php echo $row_RS_mb['username'];?>">
+           <input type="hidden" name="update" value="update">
+       </form>
        </div>
     <?php }else{ ?>
         <h1>您沒有權限進入此網站!!!</h1>
     <?php  }?>
     </div>
 
-    <?php include_once('./footer.php'); ?>
     <script src="script.js"></script>
 </body>
 </html>
