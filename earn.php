@@ -48,19 +48,28 @@ if (isset($_SESSION['name'])) {
         <div class="box">
         <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
             <div class="taskBox">
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
+                <img src="./images/123456.png" class="task">
             </div>
             <div class="boxbottom"><a href="javascript:;" id="taskBtn" class="disable">抽取</a></div>
         </div>
     </div>
-
+    <input type="checkbox" id="taskchkbox">
+    <div class="cardModule" id="cardModule" >
+        <div class="back"></div>
+        <div class="box">
+            <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
+            <h4>您抽到了XXX任務</h4>
+            <img src="./images/123456.png" alt="" id="card">
+            <div class="boxbottom"><a href="javascript:;" id="cardBtn">確認</a></div>
+        </div>
+    </div>
     <div class="urlModule" id="urlModule">
         <div class="back"></div>
         <div class="box">
@@ -83,7 +92,7 @@ if (isset($_SESSION['name'])) {
         <div class="box">
         <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
         <h4>已有任務，無法擁有多個任務</h4>
-        <div class="boxbottom"><a href="javascript:;" id="alreadyBtn"">確認</a></div>
+        <div class="boxbottom"><a href="javascript:;" id="alreadyBtn">確認</a></div>
         </div>
 
     </div>

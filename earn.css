@@ -19,7 +19,7 @@
     font-size: 20px;
     cursor: pointer;
 }
-.orderModule,.taskModule,.urlModule,.otherModule,.alreadyModule{
+.orderModule,.taskModule,.urlModule,.otherModule,.alreadyModule,.cardModule{
     position: relative;
     position: fixed;
     top: 0;
@@ -33,6 +33,7 @@
 .taskModule > .back ,
 .otherModule > .back ,
 .alreadyModule > .back ,
+.cardModule > .back ,
 .urlModule > .back {
     position: absolute;
     top: 0;
@@ -42,9 +43,10 @@
     background-color: rgba(0, 0, 0, .5);
 }
 .orderModule > .box, 
-.taskModule > .box, 
 .otherModule > .box, 
-.alreadyModule > .box, 
+.alreadyModule > .box,
+.taskModule > .box, 
+.cardModule > .box, 
 .urlModule > .box{
     position: absolute;
     top: 50%;
@@ -59,10 +61,12 @@
     align-items: center;
     flex-direction: column;
 }
+
 .orderModule > .box > .boxheader,
 .urlModule > .box > .boxheader,
 .otherModule > .box > .boxheader,
 .alreadyModule > .box > .boxheader,
+.cardModule > .box > .boxheader,
 .taskModule > .box > .boxheader{
     position: absolute;
     top:10px;
@@ -80,6 +84,7 @@
 .urlModule > .box > .boxheader > i,
 .otherModule > .box > .boxheader > i,
 .alreadyModule > .box > .boxheader > i,
+.cardModule > .box > .boxheader > i,
 .taskModule > .box > .boxheader > i{
     position: absolute;
     top: 50%;
@@ -92,6 +97,7 @@
 .urlModule > .box > .boxbottom,
 .otherModule > .box > .boxbottom,
 .alreadyModule > .box > .boxbottom,
+.cardModule > .box > .boxbottom,
 .taskModule > .box > .boxbottom{
     position: absolute;
     bottom: 20px;
@@ -106,6 +112,7 @@
 .urlModule > .box > .boxbottom > a,
 .otherModule > .box > .boxbottom > a,
 .alreadyModule > .box > .boxbottom > a,
+.cardModule > .box > .boxbottom > a,
 .taskModule > .box > .boxbottom > a{
     display: block;
     width:80px;
@@ -119,17 +126,25 @@
 }
 .taskModule > .box > .boxbottom,
 .alreadyModule > .box > .boxbottom,
+.cardModule > .box > .boxbottom,
 .otherModule > .box > .boxbottom{
     justify-content: center;
 }
 .taskModule > .box  .taskBox{
     display: grid;
-    grid-template-columns: repeat(4, 40px);
-    grid-template-rows: repeat(2, 40px);
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(2, 80px);
     grid-column-gap: 20px;
    grid-row-gap: 10px;
 
 
+}
+.taskModule > .box{
+    width:500px;
+    height: 300px;
+}
+.taskModule > .box > .boxheader{
+    width:460px;
 }
 #taskBtn.disable{
     background-color: #ccc;
@@ -142,6 +157,21 @@
     background-color: #ccc;
     cursor: pointer;
     
+}
+.cardModule > .box > img{
+    width:130px;
+    height: auto;
+    margin-top: 12px;
+}
+.cardModule > .box{
+    height: 400px;
+}
+#taskchkbox{
+    position: absolute;
+    top: -999999999999999999px;
+    left:-999999999999999px;
+    z-index: -9999999999;
+    opacity: 0;
 }
 @media screen and (max-width:1400px){
     .earn {

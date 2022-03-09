@@ -9,7 +9,11 @@ menu.addEventListener("click", ()=>{
         return;
     }
 })
-
+const imgArr = [
+    {src:"./images/2323.png"},
+    {src:"./images/00333.png"},
+];
+let randomNum = Math.floor(Math.random()*2);
 const ordersBtn = document.getElementById('ordersBtn');
 const orderModule = document.getElementById('orderModule');
 const orderClose = document.getElementsByClassName('orderClose');
@@ -22,13 +26,19 @@ const task = document.getElementsByClassName('task');
 const taskBtn = document.getElementById('taskBtn');
 const orderBtn = document.getElementById('orderBtn');
 const alreadyModule = document.getElementById('alreadyModule');
-
+const cardModule = document.getElementById('cardModule');
+const cardBtn = document.getElementById('cardBtn');
+const taskchkbox = document.getElementById('taskchkbox');
+const card = document.getElementById('card');
+const alreadyBtn = document.getElementById('alreadyBtn');
+card.src = imgArr[randomNum].src;
 const orderCloseFn = ()=>{
     orderModule.style.display = "none";
     taskModule.style.display = "none";
     urlModule.style.display = "none";
     otherModule.style.display = "none";
     alreadyModule.style.display = "none";
+    cardModule.style.display = "none";
     // clearBorder();
     // taskBtn.classList.add('disable');
     taskBtn.removeEventListener('click',taskBtnfn);
@@ -46,9 +56,14 @@ const handtaskFn = (e)=>{
 }
 const taskBtnfn = ()=>{
     taskModule.style.display = "none";
-    orderModule.style.display = "block";
+    cardModule.style.display = "block";
+    taskchkbox.checked = true;
 }
 ordersBtn.addEventListener('click',()=>{
+    if(taskchkbox.checked){
+        cardModule.style.display = "block";
+        return;
+    }
     taskModule.style.display = "block";
 })
 taskBtn.addEventListener('click',taskBtnfn);
@@ -76,6 +91,13 @@ for(let h=0;h<otherClassBtn.length;h++){
 }
 otherBtn.addEventListener("click",()=>{
     otherModule.style.display = "none";
+})
+cardBtn.addEventListener('click',()=>{
+    cardModule.style.display = "none";
+    orderModule.style.display = "block";
+})
+alreadyBtn.addEventListener('click',()=>{
+    alreadyModule.style.display = "none";
 })
 
 
