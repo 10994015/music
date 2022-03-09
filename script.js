@@ -1,10 +1,8 @@
 const menu = document.getElementById('menu');
 const nav = document.getElementById('nav');
-console.log(menu);
 
 menu.addEventListener("click", ()=>{
     nav.classList.toggle('active');
-    console.log(nav.classList[0] == "active");
     menu.src="./images/menu.png";
     if(nav.classList[0] == "active"){
         menu.src = "./images/close.png";
@@ -17,15 +15,22 @@ const orderModule = document.getElementById('orderModule');
 const orderClose = document.getElementsByClassName('orderClose');
 const taskModule = document.getElementById('taskModule');
 const urlModule = document.getElementById('urlModule');
+const otherModule = document.getElementById('otherModule');
+const otherBtn = document.getElementById('otherBtn');
+const otherClassBtn = document.getElementsByClassName('otherClassBtn');
 const task = document.getElementsByClassName('task');
 const taskBtn = document.getElementById('taskBtn');
 const orderBtn = document.getElementById('orderBtn');
+const alreadyModule = document.getElementById('alreadyModule');
+
 const orderCloseFn = ()=>{
     orderModule.style.display = "none";
     taskModule.style.display = "none";
     urlModule.style.display = "none";
-    clearBorder();
-    taskBtn.classList.add('disable');
+    otherModule.style.display = "none";
+    alreadyModule.style.display = "none";
+    // clearBorder();
+    // taskBtn.classList.add('disable');
     taskBtn.removeEventListener('click',taskBtnfn);
 }
 const clearBorder = ()=>{
@@ -59,7 +64,19 @@ for(let i=0;i<orderClose.length;i++){
     orderClose[i].addEventListener('click',orderCloseFn);
 }
 
-
+const handotherFn = ()=>{
+    if(taskBtn.classList[0] == "disable"){
+        otherModule.style.display = "block";
+        return;
+    }
+    alreadyModule.style.display = "block";
+}
+for(let h=0;h<otherClassBtn.length;h++){
+    otherClassBtn[h].addEventListener('click',handotherFn);
+}
+otherBtn.addEventListener("click",()=>{
+    otherModule.style.display = "none";
+})
 
 
 

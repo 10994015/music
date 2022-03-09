@@ -19,7 +19,7 @@
     font-size: 20px;
     cursor: pointer;
 }
-.orderModule,.taskModule,.urlModule{
+.orderModule,.taskModule,.urlModule,.otherModule,.alreadyModule{
     position: relative;
     position: fixed;
     top: 0;
@@ -31,6 +31,8 @@
 }
 .orderModule > .back,
 .taskModule > .back ,
+.otherModule > .back ,
+.alreadyModule > .back ,
 .urlModule > .back {
     position: absolute;
     top: 0;
@@ -41,6 +43,8 @@
 }
 .orderModule > .box, 
 .taskModule > .box, 
+.otherModule > .box, 
+.alreadyModule > .box, 
 .urlModule > .box{
     position: absolute;
     top: 50%;
@@ -57,6 +61,8 @@
 }
 .orderModule > .box > .boxheader,
 .urlModule > .box > .boxheader,
+.otherModule > .box > .boxheader,
+.alreadyModule > .box > .boxheader,
 .taskModule > .box > .boxheader{
     position: absolute;
     top:10px;
@@ -72,6 +78,8 @@
 }
 .orderModule > .box > .boxheader > i,
 .urlModule > .box > .boxheader > i,
+.otherModule > .box > .boxheader > i,
+.alreadyModule > .box > .boxheader > i,
 .taskModule > .box > .boxheader > i{
     position: absolute;
     top: 50%;
@@ -82,6 +90,8 @@
 }
 .orderModule > .box > .boxbottom,
 .urlModule > .box > .boxbottom,
+.otherModule > .box > .boxbottom,
+.alreadyModule > .box > .boxbottom,
 .taskModule > .box > .boxbottom{
     position: absolute;
     bottom: 20px;
@@ -94,6 +104,8 @@
 }
 .orderModule > .box > .boxbottom > a,
 .urlModule > .box > .boxbottom > a,
+.otherModule > .box > .boxbottom > a,
+.alreadyModule > .box > .boxbottom > a,
 .taskModule > .box > .boxbottom > a{
     display: block;
     width:80px;
@@ -105,7 +117,9 @@
     font-weight: 600;
     color:#222;
 }
-.taskModule > .box > .boxbottom{
+.taskModule > .box > .boxbottom,
+.alreadyModule > .box > .boxbottom,
+.otherModule > .box > .boxbottom{
     justify-content: center;
 }
 .taskModule > .box  .taskBox{

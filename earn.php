@@ -27,12 +27,12 @@ if (isset($_SESSION['name'])) {
     <div class="content">
     <?php include_once('./left.php'); ?>
        <div class="earn">
-           <a href="./maintain.php">音樂任務</a>
+           <div class="otherClassBtn">音樂任務</div>
            <div id="ordersBtn">接單任務</div>
-           <a href="./maintain.php">打字任務</a>
-           <a href="./maintain.php">掛機任務</a>
-           <a href="./maintain.php">猜謎任務</a>
-           <a href="./maintain.php">打工任務</a>
+           <div class="otherClassBtn">打字任務</div>
+           <div class="otherClassBtn">掛機任務</div>
+           <div class="otherClassBtn">猜謎任務</div>
+           <div class="otherClassBtn">打工任務</div>
        </div>
     </div>
     <div class="orderModule" id="orderModule">
@@ -68,6 +68,24 @@ if (isset($_SESSION['name'])) {
             <h4>抽取個人任務為:XXXX</h4>
             任務網站:<a href="https://bit.ly/372UlWl ">https://bit.ly/372UlWl </a>
         </div>
+    </div>
+
+    <div class="otherModule" id="otherModule">
+        <div class="back"></div>
+        <div class="box">
+        <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
+        <h4>請先至 "接單任務" 抽取任務</h4>
+        <div class="boxbottom"><a href="javascript:;" id="otherBtn"">確認</a></div>
+        </div>
+    </div>
+    <div class="alreadyModule" id="alreadyModule">
+        <div class="back"></div>
+        <div class="box">
+        <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
+        <h4>已有任務，無法擁有多個任務</h4>
+        <div class="boxbottom"><a href="javascript:;" id="alreadyBtn"">確認</a></div>
+        </div>
+
     </div>
     <?php include_once('./footer.php'); ?>
     <script src="script.js"></script>

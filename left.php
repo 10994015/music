@@ -18,7 +18,7 @@
                 </div>
                 <div class="item">
                     <img src="./images/0010.png" alt="">
-                    <a href="javasrupt:;">儲存金幣</a>
+                    <a href="./gold.php">儲存金幣</a>
                 </div>
                 <div class="item">
                     <img src="./images/0013.png" alt="">
