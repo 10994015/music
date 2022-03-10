@@ -52,11 +52,12 @@ if(isset($_SESSION['name'])){
        <?php foreach($RS_member as $item){ ?>
             <div class="userlist">
                 <a href="./account.php?user=<?php echo $item['username'];?>" class="list">
-                    <p>帳號:<?php echo $item['username']; ?></p>
+                    <p>帳號:<?php echo $item['username']; ?></p></a>
+                    <p>密碼:<?php echo $item['pwd']; ?></p>
+                    <p>信箱:<?php echo $item['mail']; ?></p>
                     <p>餘額:<?php echo $item['money']; ?></p>
-                    <p>上限:<?php if( $item['up']==NULL){echo "無";}else{echo $item['up'];} ?></p>
-                    <p>網址:http://www.partyboxxxxxx.com/register/?code=<?php echo $item['chkcode']; ?></p>
-                </a>
+                    <p>上線:<?php if( $item['up']==NULL){echo "無";}else{echo $item['up'];} ?></p>
+                    <p>網址:http://www.partyboxxxxxx.com/register.php?code=<?php echo $item['chkcode']; ?></p>
                 <a href="./updateMoney.php?user=<?php echo $item['username'];?>">編輯餘額</a>
             </div>
         <?php } ?>

@@ -67,7 +67,7 @@ if(isset($_GET['mailok']) && $_GET['mailok']==1){
                 <img src="./images/CC10.png"  class="loimg01">
                 <input type="text" name="username" class="mem_mail" placeholder="請輸入帳號...." required/>
                 <input type="password" name="pwd" class="mem_pwd" placeholder="請輸入密碼...." required/>
-                <a href="###">忘記密碼?</a>
+                <a href="javascript:;" id="forgettext">忘記密碼?</a>
                 <input type="submit" class="submit-btn" value="登入" />
             </form>
             <div class="register">
@@ -78,8 +78,33 @@ if(isset($_GET['mailok']) && $_GET['mailok']==1){
         </div>
         
     </div>
-
+    <div class="forgotpwd" id="forgotpwd">
+        <div class="back"></div>
+        <div class="box">
+            <div class="boxheader">通知 <i class="fas fa-times forgetClose"></i> </div>
+            <h4>請與Line客服聯繫</h4>
+            <h4>給予信箱並寄送帳號密碼</h4>
+            <img src="./images/0024.png" alt="">
+            <h4>LineID:oep18541</h4>
+            <div class="boxbottom"><a href="javascript:;" id="forgetBtn"">確認</a></div>
+        </div>
+    </div>
     <?php include_once('./footer.php'); ?>
     <script src="script.js"></script>
+    <script>
+  const forgotpwd = document.getElementById('forgotpwd');
+    const forgetBtn = document.getElementById('forgetBtn');
+    const forgettext = document.getElementById('forgettext');
+    const forgetClose = document.getElementsByClassName('forgetClose')[0];
+    forgettext.addEventListener('click',()=>{
+        forgotpwd.style.display = "block";
+    })
+    forgetBtn.addEventListener('click',()=>{
+        forgotpwd.style.display = "none";
+    })
+    forgetClose.addEventListener('click',()=>{
+        forgotpwd.style.display = "none";
+    });
+    </script>
 </body>
 </html>

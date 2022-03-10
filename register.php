@@ -22,7 +22,7 @@ if(isset($_GET['code'])){
         $row_RS = $stmt -> fetch(PDO::FETCH_ASSOC);
         $upuser =  $row_RS['username'];
     }
-    echo $row_RS['username'];
+    // echo $row_RS['username'];
 }
 ?>
 

@@ -9,6 +9,8 @@ menu.addEventListener("click", ()=>{
         return;
     }
 })
+
+
 const imgArr = [
     {src:"./images/2323.png"},
     {src:"./images/00333.png"},
@@ -65,13 +67,13 @@ ordersBtn.addEventListener('click',()=>{
         return;
     }
     taskModule.style.display = "block";
-})
+});
 taskBtn.addEventListener('click',taskBtnfn);
 taskBtn.removeEventListener('click',taskBtnfn);
 orderBtn.addEventListener('click',()=>{
     orderModule.style.display = "none";
     urlModule.style.display = "block";
-})
+});
 for(let t=0;t<task.length;t++){
     task[t].addEventListener('click',handtaskFn);
 }
@@ -91,14 +93,14 @@ for(let h=0;h<otherClassBtn.length;h++){
 }
 otherBtn.addEventListener("click",()=>{
     otherModule.style.display = "none";
-})
+});
 cardBtn.addEventListener('click',()=>{
     cardModule.style.display = "none";
     orderModule.style.display = "block";
-})
+});
 alreadyBtn.addEventListener('click',()=>{
     alreadyModule.style.display = "none";
-})
+});
 
 
 

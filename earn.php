@@ -65,7 +65,7 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            <h4>您抽到了XXX任務</h4>
+            <h4>恭喜您抽到此接單任務</h4>
             <img src="./images/123456.png" alt="" id="card">
             <div class="boxbottom"><a href="javascript:;" id="cardBtn">確認</a></div>
         </div>
@@ -74,7 +74,6 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            <h4>抽取個人任務為:XXXX</h4>
             任務網站:<a href="https://bit.ly/372UlWl ">https://bit.ly/372UlWl </a>
         </div>
     </div>

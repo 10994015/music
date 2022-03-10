@@ -84,3 +84,83 @@
 .login >.register >a > img{
     width:210px;
 }
+
+.forgotpwd{
+    position: relative;
+    position: fixed;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    display: none;
+}
+.forgotpwd > .back{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+.forgotpwd > .box{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:360px;
+    height: 420px;
+    background-color: #f1f1f1;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.forgotpwd > .box > img{
+    width:200px;
+}
+.forgotpwd > .box > .boxheader{
+    position: absolute;
+    top:10px;
+    left:50%;
+    transform: translateX(-50%);
+    width:320px;
+    height: 40px;
+    background-color: #D6DCE5;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.forgotpwd > .box > .boxheader > i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: 24px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.forgotpwd > .box > .boxbottom{
+    position: absolute;
+    bottom: 20px;
+    left:50%;
+    width:200px;
+    height: auto;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+.forgotpwd > .box > .boxbottom > a{
+    display: block;
+    width:80px;
+    height: 35px;
+    background-color: #D6DCE5;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 600;
+    color:#222;
+}
+.forgotpwd > .box > .boxbottom{
+    justify-content: center;
+}
