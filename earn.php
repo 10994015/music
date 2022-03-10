@@ -39,8 +39,15 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            <h4>是否轉入點數賺取?<br/>點數將轉入指定網址<br/>(操作時間:5~10分鐘)</h4>
-            <div class="boxbottom"><a href="javascript:;" id="orderBtn">是</a><a href="javascript:;" class="orderClose">否</a></div>
+            <h4>是否轉入點數賺取並前往任務網站<br/>點數將轉入指定網址<br/>(操作時間:5~10分鐘)</h4>
+           
+            <form action="./sendemail.php" method="post" class="boxbottom">
+                <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+                <input type="hidden" name="mail" value="<?php echo $_SESSION['mail']; ?>">
+                <input type="submit" value="是" id="orderBtn" name="submit"><a href="javascript:;" class="orderClose">否</a>
+            </form>
+            <!-- <div class="boxbottom"><a href="javascript:;" id="orderBtn">是</a><a href="javascript:;" class="orderClose">否</a>
+            </div> -->
         </div>
     </div>
     <div class="taskModule" id="taskModule" >
