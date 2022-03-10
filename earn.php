@@ -27,12 +27,12 @@ if (isset($_SESSION['name'])) {
     <div class="content">
     <?php include_once('./left.php'); ?>
        <div class="earn">
-           <div class="otherClassBtn">音樂任務</div>
-           <div id="ordersBtn">接單任務</div>
-           <div class="otherClassBtn">打字任務</div>
-           <div class="otherClassBtn">掛機任務</div>
-           <div class="otherClassBtn">猜謎任務</div>
-           <div class="otherClassBtn">打工任務</div>
+           <img src="./images/Q1.png" alt="" id="ordersBtn">
+           <img src="./images/Q2.png" alt="" class="otherClassBtn">
+           <img src="./images/Q3.png" alt="" class="otherClassBtn">
+           <img src="./images/Q4.png" alt="" class="otherClassBtn">
+           <img src="./images/Q5.png" alt="" class="otherClassBtn">
+           <img src="./images/Q6.png" alt="" class="otherClassBtn">
        </div>
     </div>
     <div class="orderModule" id="orderModule">
