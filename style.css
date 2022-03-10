@@ -309,14 +309,14 @@ header > #menu{
     overflow: hidden;
 }
 .content > .center > .hotspot > .hotspotBox > .listbottom > .list{
-    animation: user 10s infinite linear;
+    animation: user 80s infinite linear;
 }
 @keyframes user {
     0%{
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-1000%);
+        transform: translateY(-9500%);
     }
 }
 
