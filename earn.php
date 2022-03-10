@@ -66,7 +66,8 @@ if (isset($_SESSION['name'])) {
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
             <h4>恭喜您抽到此接單任務</h4>
-            <img src="./images/123456.png" alt="" id="card">
+            <img src="./images/2323.png" alt="" id="card">
+            <img src="./images/card/008.png" alt="" id="cardContent">
             <div class="boxbottom"><a href="javascript:;" id="cardBtn">確認</a></div>
         </div>
     </div>

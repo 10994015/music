@@ -479,7 +479,8 @@ header > #menu{
     background-color: #91A8F8;
 }
 .content > .center > .manufacturer > .manufacturercontent {
-    display: flex;
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
     justify-content: space-between;
     align-items: center;
     background-color: #ddd;
@@ -652,6 +653,22 @@ footer .footerlist > .list > p {
         margin:30px 0;
     }
 }
+@media screen and (max-width:768px){
+    .content > .center > .manufacturer > .manufacturercontent {
+        display: grid;
+        grid-template-columns: 200px 200px ;
+        grid-template-rows: 200px 200px ;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd;
+        width:100%;
+        padding: 20px 30px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        place-items: center;
+
+    }
+}
 @media screen and (max-width:600px){
     .memberinfo{
         width:100%;
@@ -671,4 +688,20 @@ footer .footerlist > .list > p {
         margin:0 auto;
     }
    
+}
+@media screen and (max-width:460px){
+    .content > .center > .manufacturer > .manufacturercontent {
+        display: grid;
+        grid-template-columns: 200px;
+        grid-template-rows: 200px 200px 200px 200px;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd;
+        width:100%;
+        padding: 20px 30px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        place-items: center;
+
+    }
 }

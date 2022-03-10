@@ -12,10 +12,16 @@ menu.addEventListener("click", ()=>{
 
 
 const imgArr = [
-    {src:"./images/2323.png"},
-    {src:"./images/00333.png"},
+    {src:"./images/card/001.png"},
+    {src:"./images/card/002.png"},
+    {src:"./images/card/003.png"},
+    {src:"./images/card/004.png"},
+    {src:"./images/card/005.png"},
+    {src:"./images/card/006.png"},
+    {src:"./images/card/007.png"},
+    {src:"./images/card/008.png"},
 ];
-let randomNum = Math.floor(Math.random()*2);
+let randomNum = Math.floor(Math.random()*8);
 const ordersBtn = document.getElementById('ordersBtn');
 const orderModule = document.getElementById('orderModule');
 const orderClose = document.getElementsByClassName('orderClose');
@@ -33,7 +39,8 @@ const cardBtn = document.getElementById('cardBtn');
 const taskchkbox = document.getElementById('taskchkbox');
 const card = document.getElementById('card');
 const alreadyBtn = document.getElementById('alreadyBtn');
-card.src = imgArr[randomNum].src;
+const cardContent = document.getElementById('cardContent');
+cardContent.src = imgArr[randomNum].src;
 const orderCloseFn = ()=>{
     orderModule.style.display = "none";
     taskModule.style.display = "none";

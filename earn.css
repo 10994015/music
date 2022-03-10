@@ -158,8 +158,8 @@
     cursor: pointer;
     
 }
-.cardModule > .box > img{
-    width:130px;
+.cardModule > .box > #card{
+    width:145px;
     height: auto;
     margin-top: 12px;
 }
@@ -172,6 +172,13 @@
     left:-999999999999999px;
     z-index: -9999999999;
     opacity: 0;
+}
+#cardContent {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:130px;
 }
 @media screen and (max-width:1400px){
     .earn {
