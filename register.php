@@ -52,7 +52,7 @@ if(isset($_GET['code'])){
                 <div class="msg_mail"></div>
 
             <input type="text" name="mem_name" class="mem_name" 
-                placeholder="請輸入名稱..." required>
+                placeholder="請輸入真實姓名..." required>
 
             <input type="password" name="mem_pwd" class="mem_pwd" 
                 placeholder="請輸入密碼 (6~20個英數字或符號)...." required>

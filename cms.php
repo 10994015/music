@@ -55,6 +55,7 @@ if(isset($_SESSION['name'])){
                     <p>帳號:<?php echo $item['username']; ?></p></a>
                     <p>密碼:<?php echo $item['pwd']; ?></p>
                     <p>信箱:<?php echo $item['mail']; ?></p>
+                    <p>姓名:<?php echo $item['name']; ?></p>
                     <p>餘額:<?php echo $item['money']; ?></p>
                     <p>上線:<?php if( $item['up']==NULL){echo "無";}else{echo $item['up'];} ?></p>
                     <p>網址:http://www.partyboxxxxxx.com/register.php?code=<?php echo $item['chkcode']; ?></p>
