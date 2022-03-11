@@ -107,7 +107,7 @@ if(isset($_SESSION['name'])){
     <div class="content">
     <?php include_once('./left.php'); ?>
         <div class="memberCenter">
-            <p>暱稱:<?php echo  $row_RS['name'];?></p>
+            <p>姓名:<?php echo  $row_RS['name'];?></p>
             <p>帳號:<?php echo  $row_RS['username'];?></p>
             <p>個人網址:http://www.partyboxxxxxx.com/register.php?code=<?php echo  $row_RS['chkcode'];?></p>
             <h2>你的下線</h2>

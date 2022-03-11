@@ -3,7 +3,7 @@ require_once('./conn.php');
 session_start();
 try {
     $sql_str = "SELECT * FROM member
-                WHERE username=:username AND pwd=:pwd AND level > 1";
+                WHERE username=:username AND pwd=:pwd AND level >= 1";
     $RS = $conn -> prepare($sql_str);
    
     $username = $_POST['username'];  //接收登入的帳號

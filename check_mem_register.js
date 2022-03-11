@@ -54,11 +54,12 @@ $(document).ready(function(){
     if($(this).val()!=""){
       var chk_mail_val = $(this).val();	//取得目前輸入的內容值
       //以 reg 變數設定檢查E-Mail格式的正則表達式(描述字元規則的檢查物件)
-      var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+      // var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+      var reg = /^0[9]\d{8}$/;
 
       //以 reg 物件檢查 chk_mail_val, 符合規則得到true
       if( !reg.test(chk_mail_val) ){
-        $(msg_mail).html('帳號格式不符合E-Mail！');
+        $(msg_mail).html('手機號碼格式錯誤!');
         test_mail = false;
       }else{
 
@@ -74,11 +75,11 @@ $(document).ready(function(){
           //mem_chk_member.php完成工作會回傳值, 以 msg 收下回傳的值
           //console.log('=========='+msg);
           if(msg==1){   //當收到的值==1, 表示資料庫中已有此帳號
-            $(msg_mail).html('此Email已註冊過');
+            $(msg_mail).html('此手機號碼已註冊過');
             test_mail = false;
             
           }else{
-            $(msg_mail).html(msg_blue_start+'帳號可以使用！'+msg_blue_end);
+            $(msg_mail).html(msg_blue_start+'此手機可以使用！'+msg_blue_end);
             test_mail = true;
             
           }
@@ -222,7 +223,7 @@ $(document).ready(function(){
     else{	//否則表示有任何一個錯誤時, 顯示訊息提示
       var result = '';
       var msg2_username    = '此帳號已有人使用！請換一組帳號註冊！\r';
-      var msg2_mail        = 'Email必須以Email格式申請或已有人使用！\r';
+      var msg2_mail        = '手機號碼必須符合格式申請或已有人使用！\r';
       var msg2_pwd         = '密碼必須以6~20個字元填寫！\r';
       var msg2_confirm_pwd = '確認密碼必須 = 密碼的輸入！\r';
       var msg2_chkcode     = '必須依左下方的數字圖案填寫驗證碼！\r';

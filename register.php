@@ -48,7 +48,7 @@ if(isset($_GET['code'])){
                 placeholder="請輸入帳號..." required>
                 <div class="msg_username"></div>
             <input type="text" name="mem_mail" class="mem_mail" 
-                placeholder="請輸入EMail..." required>
+                placeholder="請輸入手機號碼..." required>
                 <div class="msg_mail"></div>
 
             <input type="text" name="mem_name" class="mem_name" 

@@ -25,11 +25,11 @@ if(isset($_POST['MM_process']) && $_POST['MM_process']=='addmem'){
 
         $stmt ->execute();
 
-        $result2 = sendMail($mem_mail,$mem_name,$mem_chkcode,$mem_usercode,$username);
+        // $result2 = sendMail($mem_mail,$mem_name,$mem_chkcode,$mem_usercode,$username);
 
         $msg =1;
 
-        if($result2!=1){$msg = 0;}
+        // if($result2!=1){$msg = 0;}
 
         header('Location:mem_addmem_ok.php?msg='.$msg);
         // header('Location:mem_addmem_ok.php');
@@ -64,9 +64,8 @@ if(isset($_GET['msg']) && $_GET['msg']==1){
 
 <?php
     echo '<h1 data-no="4" class="display-none">註冊成功</h1>';
-    echo '<h2>感謝您註冊新會員成功！<br>
-                請前往郵件信箱收信！<br>
-                點選驗證連結再回到網站！<br></h2>';
+    echo '<h2>感謝您註冊新會員成功！<br>請返回登入介面進行登入!</h2>';
+               
 }
 
 
@@ -74,7 +73,7 @@ if(isset($_GET['msg']) && $_GET['msg']==1){
 //如果接收到msg的訊息是0時, 表示註冊成功, 但發信失敗了
 if(isset($_GET['msg']) && $_GET['msg']==0){
     echo '<h1 data-no="4" class="display-none">發信失敗</h1>';
-    echo '<h2>由於.........發信失敗, 請重發確認信.......</h2>';
+    echo '<h2>註冊失敗</h2>';
 
 }
 
@@ -90,22 +89,22 @@ if(isset($_GET['msg']) && $_GET['msg']==0){
 
 
 //負責發信的自定函式(收件者信箱, 收件者名稱, 確認信的驗證碼)
-function sendMail($mailto,$name,$chkcode,$mem_usercode,$username){
+// function sendMail($mailto,$name,$chkcode,$mem_usercode,$username){
  
-    $subject = "=?UTF-8?B?".base64_encode('Party Go會員功能啟用通知')."?=";
-    $content = $name.'您好, 感謝申請會員<br>'
-              .'Party Go會員功能啟用通知<br>'
-              .'請點選<a href="localhost/partybox/login.php?mailok=1&mem_mail='
-              .$mailto.'&mem_chkcode='.$chkcode.'&username='.$username.'&mem_usercode='.$mem_usercode.'">此連結回覆確認信箱</a><br>'
-              .'此信件為系統自動發送, 請勿點選回覆信件'; 
+//     $subject = "=?UTF-8?B?".base64_encode('Party Go會員功能啟用通知')."?=";
+//     $content = $name.'您好, 感謝申請會員<br>'
+//               .'Party Go會員功能啟用通知<br>'
+//               .'請點選<a href="localhost/partybox/login.php?mailok=1&mem_mail='
+//               .$mailto.'&mem_chkcode='.$chkcode.'&username='.$username.'&mem_usercode='.$mem_usercode.'">此連結回覆確認信箱</a><br>'
+//               .'此信件為系統自動發送, 請勿點選回覆信件'; 
    
-    $header = "From: cagletien4@gmail.com\r\n";
-    $header .= "Content-type: text/html; charset=utf8";
+//     $header = "From: cagletien4@gmail.com\r\n";
+//     $header .= "Content-type: text/html; charset=utf8";
    
-    //mail(收件者,信件主旨,信件內容,信件檔頭資訊)
-    $result = mail($mailto, $subject, $content, $header);
-    return $result;
-  }
+//     //mail(收件者,信件主旨,信件內容,信件檔頭資訊)
+//     $result = mail($mailto, $subject, $content, $header);
+//     return $result;
+//   }
 
 //負責取得驗證碼的自定函式
 function getchkcode(){
