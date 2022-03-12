@@ -164,3 +164,27 @@
 .forgotpwd > .box > .boxbottom{
     justify-content: center;
 }
+
+@media screen and (max-width:1024px){
+    .banner{
+        display: none;
+    }
+    .content > .left{
+        display: none;
+    }
+}
+@media screen and (max-width:768px){
+    .login{
+        flex-direction: column;
+        height: 700px;
+        margin:0;
+    }
+    .login> form{
+        width:80%;
+        margin:15px 0;
+    }
+    .login >.register{
+        width:80%;
+        margin:15px 0;
+    }
+}

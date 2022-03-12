@@ -1,3 +1,5 @@
+ .content{
+ }
  .register{
             width:700px;
             height: 600px;
@@ -139,4 +141,21 @@
         top: 440px;
         left:50%;
         transform: translateX(-50%);
+    }
+
+
+    @media screen and (max-width:1024px){
+        .banner{
+            display: none;
+        }
+        .content > .left{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:700px){
+        .register{
+            width:100%;
+            margin:0;
+        }
     }
