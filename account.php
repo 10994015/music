@@ -33,7 +33,7 @@ if(isset($_SESSION['name']) && isset($_GET['user'])){
     <div class="content">
     <?php include_once('./left.php'); ?>
        <div class="account">
-           <h1>下限總數:<?php echo $total_user;?></h1>
+           <h1>下線總數:<?php echo $total_user;?></h1>
            <?php foreach($RS_user as $item){ ?>
             <p>帳號:<?php echo $item['down']; ?></p>
            <?php } ?>
@@ -46,7 +46,7 @@ if(isset($_SESSION['name']) && isset($_GET['user'])){
 <?php
 } 
 catch ( PDOException $e ){
-      echo "此帳號無下限!<br>";
+      echo "此帳號無下線!<br>";
       echo "<a href='./cms.php'>回前頁</a>";
 }
 }else{

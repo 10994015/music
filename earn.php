@@ -19,7 +19,7 @@ if (isset($_SESSION['name'])) {
 <?php if(isset($_SESSION['name'])){ ?>
     <div class="memberinfo">
         <div><b>帳號</b><p><?php echo $_SESSION['username']; ?></p></div>
-        <div><b>餘額</b><p><?php echo $_SESSION['money']; ?></p></div>
+        <div><b>餘額</b><p id="moneyyyyy"><?php echo $_SESSION['money']; ?></p></div>
         <a href="./member_logout.php" class="logout">登出</a>
     </div>
     <?php } ?>
@@ -48,6 +48,14 @@ if (isset($_SESSION['name'])) {
             </form>
             <!-- <div class="boxbottom"><a href="javascript:;" id="orderBtn">是</a><a href="javascript:;" class="orderClose">否</a>
             </div> -->
+        </div>
+    </div>
+    <div class="storeModule" id="storeModule" >
+        <div class="back"></div>
+        <div class="box">
+            <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
+            <h4>您的餘額為0，請先儲值!</h4>
+            <div class="boxbottom"><a href="javascript:;" id="storeBtn">確認</a></div>
         </div>
     </div>
     <div class="taskModule" id="taskModule" >

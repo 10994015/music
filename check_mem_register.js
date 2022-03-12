@@ -31,21 +31,27 @@ $(document).ready(function(){
   chk_username.bind("blur",function(){
     if($(this).val()!=""){
       var chk_username_val = $(this).val();	
-      $.ajax({
-        url   : 'mem_chk_username.php'
-        ,type :'POST'
-        ,data :{ mem_username:chk_username_val }
-      }).done(function(msg){
-        if(msg==1){   //當收到的值==1, 表示資料庫中已有此帳號
-          $(msg_username).html('帳號已存在,不能使用！');
-          test_username = false;
-          
-        }else{
-          $(msg_username).html(msg_blue_start+'帳號可以使用！'+msg_blue_end);
-          test_username = true;
-          
-        }
-      })
+      var reg_username = /[a-zA-Z]|\d/;
+      if( !reg_username.test(chk_username_val) ){
+        $(msg_username).html('只能輸入英文或數字!');
+        test_username = false;
+      }else{
+        $.ajax({
+          url   : 'mem_chk_username.php'
+          ,type :'POST'
+          ,data :{ mem_username:chk_username_val }
+        }).done(function(msg){
+          if(msg==1){   //當收到的值==1, 表示資料庫中已有此帳號
+            $(msg_username).html('帳號已存在,不能使用！');
+            test_username = false;
+            
+          }else{
+            $(msg_username).html(msg_blue_start+'帳號可以使用！'+msg_blue_end);
+            test_username = true;
+            
+          }
+        })
+      }
     }
   })
   //當游標離開帳號欄位時
@@ -222,7 +228,7 @@ $(document).ready(function(){
     }
     else{	//否則表示有任何一個錯誤時, 顯示訊息提示
       var result = '';
-      var msg2_username    = '此帳號已有人使用！請換一組帳號註冊！\r';
+      var msg2_username    = '此帳號無法使用！\r';
       var msg2_mail        = '手機號碼必須符合格式申請或已有人使用！\r';
       var msg2_pwd         = '密碼必須以6~20個字元填寫！\r';
       var msg2_confirm_pwd = '確認密碼必須 = 密碼的輸入！\r';

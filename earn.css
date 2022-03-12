@@ -23,7 +23,7 @@
     width:180px;
     cursor: pointer;
 }
-.orderModule,.taskModule,.urlModule,.otherModule,.alreadyModule,.cardModule{
+.orderModule,.taskModule,.urlModule,.otherModule,.alreadyModule,.cardModule,.storeModule{
     position: relative;
     position: fixed;
     top: 0;
@@ -38,6 +38,7 @@
 .otherModule > .back ,
 .alreadyModule > .back ,
 .cardModule > .back ,
+.storeModule > .back ,
 .urlModule > .back {
     position: absolute;
     top: 0;
@@ -51,6 +52,7 @@
 .alreadyModule > .box,
 .taskModule > .box, 
 .cardModule > .box, 
+.storeModule > .box, 
 .urlModule > .box{
     position: absolute;
     top: 50%;
@@ -71,6 +73,7 @@
 .otherModule > .box > .boxheader,
 .alreadyModule > .box > .boxheader,
 .cardModule > .box > .boxheader,
+.storeModule > .box > .boxheader,
 .taskModule > .box > .boxheader{
     position: absolute;
     top:10px;
@@ -89,6 +92,7 @@
 .otherModule > .box > .boxheader > i,
 .alreadyModule > .box > .boxheader > i,
 .cardModule > .box > .boxheader > i,
+.storeModule > .box > .boxheader > i,
 .taskModule > .box > .boxheader > i{
     position: absolute;
     top: 50%;
@@ -102,6 +106,7 @@
 .otherModule > .box > .boxbottom,
 .alreadyModule > .box > .boxbottom,
 .cardModule > .box > .boxbottom,
+.storeModule > .box > .boxbottom,
 .taskModule > .box > .boxbottom{
     position: absolute;
     bottom: 20px;
@@ -117,6 +122,7 @@
 .otherModule > .box > .boxbottom > a,
 .alreadyModule > .box > .boxbottom > a,
 .cardModule > .box > .boxbottom > a,
+.storeModule > .box > .boxbottom > a,
 .taskModule > .box > .boxbottom > a{
     display: block;
     width:80px;
@@ -145,6 +151,7 @@
 .taskModule > .box > .boxbottom,
 .alreadyModule > .box > .boxbottom,
 .cardModule > .box > .boxbottom,
+.storeModule > .box > .boxbottom,
 .otherModule > .box > .boxbottom{
     justify-content: center;
 }

@@ -1,9 +1,17 @@
 <?php 
-
+include_once('./conn.php');
+session_start();
 if(isset($_POST['submit'])){
     try{
         $name = $_POST['username'];
         $email = $_POST['mail'];
+        $sql_str = "UPDATE member SET money = 0 WHERE username  = :username";
+        $stmt = $conn->prepare($sql_str);
+        $stmt->bindParam(':username'    ,$name);
+
+        $stmt->execute();
+        $_SESSION['money'] = 0;        
+
         $result2 = sendMail($name,$email);
 
         if($result2 == 1){

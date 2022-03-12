@@ -40,6 +40,11 @@ const taskchkbox = document.getElementById('taskchkbox');
 const card = document.getElementById('card');
 const alreadyBtn = document.getElementById('alreadyBtn');
 const cardContent = document.getElementById('cardContent');
+const storeModule = document.getElementById('storeModule');
+const storeBtn = document.getElementById('storeBtn');
+const moneyyyyy = document.getElementById('moneyyyyy');
+let storemoney = moneyyyyy.innerText;
+
 cardContent.src = imgArr[randomNum].src;
 const orderCloseFn = ()=>{
     orderModule.style.display = "none";
@@ -48,6 +53,7 @@ const orderCloseFn = ()=>{
     otherModule.style.display = "none";
     alreadyModule.style.display = "none";
     cardModule.style.display = "none";
+    storeModule.style.display = "none";
     // clearBorder();
     // taskBtn.classList.add('disable');
     taskBtn.removeEventListener('click',taskBtnfn);
@@ -71,6 +77,10 @@ const taskBtnfn = ()=>{
 ordersBtn.addEventListener('click',()=>{
     if(taskchkbox.checked){
         cardModule.style.display = "block";
+        return;
+    }
+    if(storemoney <= 0){
+        storeModule.style.display = "block";
         return;
     }
     taskModule.style.display = "block";
@@ -111,3 +121,6 @@ alreadyBtn.addEventListener('click',()=>{
 
 
 
+storeBtn.addEventListener('click',()=>{
+    storeModule.style.display = "none";
+})
