@@ -10,7 +10,7 @@
                 </div>
                 <div class="item">
                     <img src="./images/0012.png" alt="">
-                    <a href="javasrupt:;">新手教學</a>
+                    <a href="./newbie.php">新手教學</a>
                 </div>
                 <div class="item">
                     <img src="./images/0011.png" alt="">
@@ -26,7 +26,7 @@
                 </div>    
                 <div class="item">
                     <img src="./images/0014.png" alt="">
-                    <a href="javasrupt:;">帳號保護機制</a>
+                    <a href="./changepwd.php">帳號保護機制</a>
                 </div>  
             </div>
             <div class="guide">

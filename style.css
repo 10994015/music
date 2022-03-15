@@ -392,14 +392,14 @@ header > #menu{
     color:var(--main-color);
     font-weight: 600;
 }
-.content > .center > .message > .post1 {
+.content > .center > .message > .post {
     display: flex;
     flex-direction: column;
     background-color: #FEFEFE;
     width:80%;
     margin:auto;
 }
-.content > .center > .message > .post1 > .list {
+.content > .center > .message > .post > .list {
     display: flex;
     align-items: center;
     min-height: 50px;
@@ -407,11 +407,11 @@ header > #menu{
     color:#222;
     border-bottom: 1px #ddd solid;
 }
-.content > .center > .message > .post1 > .list:hover {
+.content > .center > .message > .post > .list:hover {
     color:var(--main-color);
     transition:color .2s ease;
 }
-.content > .center > .message > .post1 > .list > .class {
+.content > .center > .message > .post > .list > .class {
     min-width:50px;
     background-color: #F44F87;
     color:#fff;
@@ -419,7 +419,7 @@ header > #menu{
     text-align: center;
     margin:0 15px;
 }
-.content > .center > .message > .post1 > .list > .date {
+.content > .center > .message > .post > .list > .date {
     width:80px;
     font-weight: 600;
     text-align: left;

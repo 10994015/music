@@ -2,6 +2,29 @@
 require_once('./conn.php');
 if( !isset($_SESSION) ){
     session_start();
+    try{
+        $sql_str = "SELECT * FROM messages  ORDER BY id DESC limit 5";
+        $RS_mb = $conn -> query($sql_str);
+        $total_RS_mb = $RS_mb -> rowCount();
+
+        $sql_str1 = "SELECT * FROM messages  WHERE post=1 ORDER BY id DESC limit 5";
+        $RS_mb1 = $conn -> query($sql_str1);
+
+        $sql_str2 = "SELECT * FROM messages  WHERE post=2 ORDER BY id DESC limit 5";
+        $RS_mb2 = $conn -> query($sql_str2);
+
+        $sql_str3 = "SELECT * FROM messages  WHERE post=3 ORDER BY id DESC limit 5";
+        $RS_mb3 = $conn -> query($sql_str3);
+      
+    
+        
+    
+        
+    }
+    catch(PDOException $e){
+        die('Error!:'.$e->getMessage());
+      }
+
 }
 
 ?>
@@ -68,31 +91,54 @@ if( !isset($_SESSION) ){
             <div class="message">
                 <h2>訊息公告</h2>
                 <div class="messatgeItem">
-                    <div class="item active">最新公告</div>
-                    <div class="item">活動公告</div>
-                    <div class="item">系統公告</div>
-                    <div class="item">客服公告</div>
+                    <div class="item active" id="msgbtn1">最新公告</div>
+                    <div class="item" id="msgbtn2">活動公告</div>
+                    <div class="item" id="msgbtn3">系統公告</div>
+                    <div class="item" id="msgbtn4">客服公告</div>
                 </div>
-                <div class="post1">
-                    <a href="javascript:;" class="list">
-                        <h4 class="class">活動</h4>
-                        <div class="date">22/03/01</div>
-                        <h4 class="title">【霍爵樂團活動】限定ATM通路回饋活動霍爵樂團活動】限定ATM通路回饋活動</h4>
+                <div class="post" id="post1">
+
+                    <?php foreach($RS_mb as $item){ ?>
+                    <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
+                        <h4 class="class">最新</h4>
+                        <div class="date"><?php echo $item['time']; ?></div>
+                        <h4 class="title"><?php echo $item['title']; ?></h4>
                     </a>
-                    <a href="javascript:;" class="list">
-                        <h4 class="class">活動</h4>
-                        <div class="date">22/03/02</div>
-                        <h4 class="title">0226-0227超好康的周末加碼來囉~</h4>
+                    <?php } ?>
+                    
+                    
+                </div>
+                <div class="post" id="post2">
+                <?php foreach($RS_mb1 as $item){ ?>
+                    <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
+                        <h4 class="class">最新</h4>
+                        <div class="date"><?php echo $item['time']; ?></div>
+                        <h4 class="title"><?php echo $item['title']; ?></h4>
                     </a>
-                    <a href="javascript:;" class="list">
-                        <h4 class="class">活動</h4>
-                        <div class="date">22/02/20</div>
-                        <h4 class="title">2月24日(四)維護公告</h4>
+                    <?php } ?>
+                   
+                </div>
+                <div class="post" id="post3">
+                <?php foreach($RS_mb2 as $item){ ?>
+                    <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
+                        <h4 class="class">最新</h4>
+                        <div class="date"><?php echo $item['time']; ?></div>
+                        <h4 class="title"><?php echo $item['title']; ?></h4>
                     </a>
+                    <?php } ?>
+                </div>
+                <div class="post" id="post4">
+                <?php foreach($RS_mb3 as $item){ ?>
+                    <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
+                        <h4 class="class">最新</h4>
+                        <div class="date"><?php echo $item['time']; ?></div>
+                        <h4 class="title"><?php echo $item['title']; ?></h4>
+                    </a>
+                    <?php } ?>
                     
                 </div>
                 <div class="more">
-                    <a href="javascript:;">More...</a>
+                    <a href="./messages.php">More...</a>
                 </div>
             </div>
             
@@ -181,6 +227,7 @@ if( !isset($_SESSION) ){
 </div>
     <?php include_once('./footer.php'); ?>
     <script src="script.js"></script>
+    <script src="messages.js"></script>
     <script>
            
 const user =  [

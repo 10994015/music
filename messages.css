@@ -1,0 +1,82 @@
+.content  > .messages {
+    background-color: #ddd;
+    width:700px;
+    margin: 0 50px;
+    border-radius: 8px;
+    min-height: 500px;
+    height: auto;
+    padding-bottom: 25px;
+    overflow: hidden;
+}
+.content  > .messages > h2{
+    color:#fff;
+    text-align: center;
+    width:100%;
+    background-color: var(--main-color);
+    height: 60px;
+    line-height: 60px;
+}
+.content  > .messages > .messatgeItem{
+    display: flex;
+    align-items: center;
+    width:100%;
+    height: 60px;
+}
+.content  > .messages > .messatgeItem > .item {
+    width:25%;
+    text-align: center;
+    cursor: pointer;
+}
+.content  > .messages > .messatgeItem > .item:hover{
+    color:var(--main-color);
+}
+.content  > .messages > .messatgeItem > .item.active{
+    color:var(--main-color);
+    font-weight: 600;
+}
+.content  > .messages > .post {
+    display: flex;
+    flex-direction: column;
+    background-color: #FEFEFE;
+    width:80%;
+    margin:auto;
+}
+.content  > .messages > .post > .list {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 10px 0px;
+    color:#222;
+    border-bottom: 1px #ddd solid;
+}
+.content  > .messages > .post > .list:hover {
+    color:var(--main-color);
+    transition:color .2s ease;
+}
+.content  > .messages > .post > .list > .class {
+    min-width:50px;
+    background-color: #F44F87;
+    color:#fff;
+    font-weight: 600;
+    text-align: center;
+    margin:0 15px;
+}
+.content  > .messages > .post > .list > .date {
+    width:80px;
+    font-weight: 600;
+    text-align: left;
+    margin:0 15px;
+}
+.content  > .messages > .more{
+    width:100%;
+    height: 30px;
+}
+.content  > .messages > .more > a{
+    width:80%;
+    height: 30px;
+    line-height: 30px;
+    margin:auto;
+    text-align: right;
+    display: block;
+    color:var(--main-color);
+}

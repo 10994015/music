@@ -1,7 +1,7 @@
 <header>
         <a href="./" id="logo"><img src="./images/logo.png"></a>
         <nav id="nav">
-                <a href="javascript:;"><li><img src="./images/0002.png">訊息公告</li></a>
+                <a href="./messages.php"><li><img src="./images/0002.png">訊息公告</li></a>
                 <a href="./company.php"><li><img src="./images/0003.png">公司簡介</li></a>
                 <a href="./contact.php"><li><img src="./images/0006.png">客服專區</li></a>
         </nav>
