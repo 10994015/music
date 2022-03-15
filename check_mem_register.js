@@ -31,7 +31,7 @@ $(document).ready(function(){
   chk_username.bind("blur",function(){
     if($(this).val()!=""){
       var chk_username_val = $(this).val();	
-      var reg_username = /[a-zA-Z]|\d/;
+      var reg_username = /[a-zA-Z]|\d{,5}$/;
       if( !reg_username.test(chk_username_val) ){
         $(msg_username).html('只能輸入英文或數字!');
         test_username = false;
