@@ -18,7 +18,7 @@ if( isset($_POST['update']) && $_POST['update'] == "update"){
     //執行準備好的$stmt物件工作
     $stmt->execute();
     // $_SESSION['money'] = $money;
-    header('Location:./cms.php');
+    header('Location:./ContentManagementSystem.php');
   }
   catch (PDOException $e ){
     die("Error!: ". $e->getMessage());

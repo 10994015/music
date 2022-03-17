@@ -36,16 +36,8 @@ if(isset($_SESSION['name'])){
     </style>
 </head>
 <body>
-<?php if(isset($_SESSION['name'])){ ?>
-    <div class="memberinfo">
-        <div><b>帳號</b><p><?php echo $_SESSION['username']; ?></p></div>
-        <div><b>餘額</b><p><?php echo $_SESSION['money']; ?></p></div>
-        <a href="./member_logout.php" class="logout">登出</a>
-    </div>
-    <?php } ?>
-<?php include_once('./shard.php'); ?>
+
     <div class="content">
-    <?php include_once('./left.php'); ?>
     <?php if($_SESSION['mem_level'] > 2) {?>
        <div class="cms">
         <h1><?php echo "會員總數:".$total_member;?></h1>
