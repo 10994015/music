@@ -67,7 +67,7 @@ if (isset($_SESSION['name'])) {
                     
                     <?php foreach($RS_mb as $item){ ?>
                         <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
-                            <h4 class="class">最新</h4>
+                            <h4 class="class new"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
                             <div class="date"><?php echo $item['time']; ?></div>
                             <h4 class="title"><?php echo $item['title']; ?></h4>
                         </a>
@@ -76,7 +76,7 @@ if (isset($_SESSION['name'])) {
                 <div class="post" id="post2">
                 <?php foreach($RS_mb1 as $item){ ?>
                         <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
-                            <h4 class="class"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
+                            <h4 class="class active"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
                             <div class="date"><?php echo $item['time']; ?></div>
                             <h4 class="title"><?php echo $item['title']; ?></h4>
                         </a>
@@ -86,7 +86,7 @@ if (isset($_SESSION['name'])) {
                 <div class="post" id="post3">
                 <?php foreach($RS_mb2 as $item){ ?>
                         <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
-                            <h4 class="class"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
+                            <h4 class="class system"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
                             <div class="date"><?php echo $item['time']; ?></div>
                             <h4 class="title"><?php echo $item['title']; ?></h4>
                         </a>
@@ -96,7 +96,7 @@ if (isset($_SESSION['name'])) {
                 <div class="post" id="post4">
                 <?php foreach($RS_mb3 as $item){ ?>
                         <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
-                            <h4 class="class"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
+                            <h4 class="class service"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
                             <div class="date"><?php echo $item['time']; ?></div>
                             <h4 class="title"><?php echo $item['title']; ?></h4>
                         </a>

@@ -33,9 +33,16 @@ $(document).ready(function(){
       var chk_username_val = $(this).val();	
       var reg_username = /[a-zA-Z]|\d{,5}$/;
       if( !reg_username.test(chk_username_val) ){
-        $(msg_username).html('只能輸入英文或數字!');
+        $(msg_username).html('只能輸入英文或數字');
         test_username = false;
-      }else{
+      }else if(chk_username_val !=chk_username_val.toLowerCase()){
+        $(msg_username).html('只能用小寫英文!');
+        test_username = false;
+      }else if(chk_username_val.length<5 || chk_username_val.length>10){
+        $(msg_username).html('長度需為5至10位!');
+        test_username = false;
+      }
+      else{
         $.ajax({
           url   : 'mem_chk_username.php'
           ,type :'POST'

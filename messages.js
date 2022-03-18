@@ -6,6 +6,7 @@ const msgbtn1 = document.getElementById('msgbtn1');
 const msgbtn2 = document.getElementById('msgbtn2');
 const msgbtn3 = document.getElementById('msgbtn3');
 const msgbtn4 = document.getElementById('msgbtn4');
+const classbox = document.getElementsByClassName('class');
 post1.style.display = "block";
 post2.style.display = "none";
 post3.style.display = "none";
@@ -41,3 +42,12 @@ msgbtn4.addEventListener('click',()=>{
     post4.style.display = "block";
     msgbtn4.classList.add('active');
 })
+for(let c=0;c<classbox.length;c++){
+    if(classbox[c].innerHTML=="活動"){
+        classbox[c].style.backgroundColor = "#FF5600";
+    }else if(classbox[c].innerHTML=="系統"){
+        classbox[c].style.backgroundColor = "#008080";
+    }else{
+        classbox[c].style.backgroundColor = "blueviolet";
+    }
+}

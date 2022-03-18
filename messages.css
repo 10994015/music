@@ -80,3 +80,12 @@
     display: block;
     color:var(--main-color);
 }
+.content  > .messages > .post > .list > .class.new{
+    background-color: #FF5600;
+}
+.content  > .messages > .post > .list > .class.system{
+    background-color:#008080 ;
+}
+.content  > .messages > .post > .list > .class.service{
+    background-color: blueviolet;
+}

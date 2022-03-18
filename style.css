@@ -727,3 +727,13 @@ footer .footerlist > .list > p {
 
     }
 }
+
+.content > .center > .message > .post > .list > .class.new{
+    background-color: #FF5600;
+}
+.content > .center > .message > .post > .list > .class.system{
+    background-color:#008080 ;
+}
+.content > .center > .message > .post > .list > .class.service{
+    background-color: blueviolet;
+}
