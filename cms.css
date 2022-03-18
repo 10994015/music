@@ -58,6 +58,9 @@
     overflow: hidden;
     width:0;
     height: 0;
+    position: absolute;
+    top: -9999999999999999999999px;
+    left:-99999999999999999999px;
 }
 #update{
     width:120px;

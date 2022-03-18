@@ -60,9 +60,10 @@ if(isset($_SESSION['name'])){
                             <?php foreach($RS_member as $item2){ ?>
                                 <li class="middlelist">
                                     <h5 class="middleusername uname">
-                                        <i class="fa-solid fa-caret-right"></i>
+                                        <i class="fa-solid fa-caret-right icon" ></i>
+                                        <!-- <i class="fa-solid fa-caret-down"></i> -->
                                         <?php echo $item2['username']."-".$item2['name']; ?>
-                                        <?php echo "<span class='opacitytext'>-".$item2['money']."-".$item2['chkcode']."</span>"; ?>
+                                        <?php echo "<span class='opacitytext'>-".$item2['money']."-".$item2['chkcode']."-".$item2['up']."</span>"; ?>
                                     </h5>
                                      <?php 
                                      $sql_upname = "";
@@ -89,7 +90,7 @@ if(isset($_SESSION['name'])){
                                         foreach($row__up_RS as $upname){
                                             echo "<li class='uname'>";
                                             echo $upname['username']."-".$upname['name'];
-                                            echo "<span class='opacitytext'>-".$upname['money']."-".$upname['chkcode']."</span>";
+                                            echo "<span class='opacitytext'>-".$upname['money']."-".$upname['chkcode']."-".$upname['up']."</span>";
                                             echo "</li>";
                                         }
                                         echo "</ul>";
@@ -122,6 +123,7 @@ if(isset($_SESSION['name'])){
                     <h3 id="contentname">真實姓名:name</h3>
                     <h3 id="contentmoney">餘額:money</h3>
                     <h3 id="contenturl">專屬網址:url</h3>
+                    <h3 id="contentup">上線:up</h3>
                     <div id="qrcode"></div>
                </div>
                 <div id="update">編輯</div>
@@ -141,24 +143,29 @@ if(isset($_SESSION['name'])){
         
         
             const uname = document.getElementsByClassName('middlelist');
+            const mname = document.getElementsByClassName('uname');
             const contentusername = document.getElementById('contentusername');
             const update = document.getElementById('update');
             let showusername = null;
             let showname = null;
             let showmoney = null;
             let showurl = null;
-            for(let n=0;n<uname.length;n++){
-                uname[n].addEventListener('click',postdata);
+            let showup = null;
+            for(let n=0;n<mname.length;n++){
+                mname[n].addEventListener('click',postdata);
             }
             function postdata(){
+                console.log(this.innerText.split("-"));
                 showusername = this.innerText.split("-")[0];
                 showname = this.innerText.split("-")[1];
                 showmoney = this.innerText.split("-")[2];
                 showurl = this.innerText.split("-")[3];
+                showup = this.innerText.split("-")[4];
                 contentusername.innerHTML = "帳號:"+showusername;
                 contentname.innerHTML = "真實姓名:"+showname;
                 contentmoney.innerHTML = "餘額:"+showmoney;
                 contenturl.innerHTML = "專屬網址"+"http://www.partyboxxxxxx.com/register.php?code="+showurl;
+                contentup.innerHTML = "上線"+showup;
                 $('#qrcode').html('');
                 $('#qrcode').qrcode({
                     width: 120,

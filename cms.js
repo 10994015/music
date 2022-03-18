@@ -2,11 +2,16 @@ const middlelist = document.getElementsByClassName('middlelist');
 const middleusername = document.getElementsByClassName('middleusername');
 function openminul(){
     let minul = this.parentElement.querySelector('.min');
+    let icon = this.parentElement.querySelector('.icon');
    if(minul !== null){
         if(minul.style.display == "block"){
             minul.style.display = "none";
+            icon.classList.remove('fa-caret-down');
+            icon.classList.add('fa-caret-right');
         }else{
             minul.style.display = "block";
+            icon.classList.remove('fa-caret-right');
+            icon.classList.add('fa-caret-down');
         }
    }
 }
