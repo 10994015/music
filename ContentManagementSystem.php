@@ -5,7 +5,7 @@ if(isset($_SESSION['name'])){
     try {
         $admin = "SELECT * FROM member WHERE level=9 ORDER BY id ASC";
         $admin_member = $conn -> query($admin);
-        $sql_str = "SELECT * FROM member WHERE level=2 ORDER BY id ASC";
+        $sql_str = "SELECT * FROM member WHERE level=2 ORDER BY id DESC";
         $RS_member = $conn -> query($sql_str);
         $RS_member_push = $conn -> query($sql_str);
         $total_member = $RS_member -> rowCount();
@@ -36,7 +36,7 @@ if(isset($_SESSION['name'])){
     <link rel="stylesheet" href="cms.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     
-    <title>Party Go</title>
+    <title>Party Go管理後台</title>
     <style>
     .userlist{
         border-bottom:1px #000 solid;
@@ -44,16 +44,18 @@ if(isset($_SESSION['name'])){
     </style>
 </head>
 <body>
+<h6 id="logo"><p>PartyGo管理後臺</p><p></p></h6>
     <div class="content">
     <?php if($_SESSION['mem_level'] > 2) {?>
        <div class="cms">
             <div class="member">
-                <div class="search">
-                    <input type="text" placeholder="搜尋..." id="searchbox">
-                    <button id="searchbtn">搜尋</button>
-                </div>
+              
                 <?php foreach($admin_member as $item){?>
                     <ul id="max">
+                    <div class="search">
+                        <input type="text" placeholder="搜尋..." id="searchbox">
+                        <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
                         <li>
                             <h4><?php echo $item['username']."-".$item['name']; ?></h4>
                             <ul class="middle">
@@ -119,11 +121,11 @@ if(isset($_SESSION['name'])){
             </div>
             <div class="usercontent">
                <div>
-                <h3 id="contentusername">帳號:username</h3>
-                    <h3 id="contentname">真實姓名:name</h3>
-                    <h3 id="contentmoney">餘額:money</h3>
-                    <h3 id="contenturl">專屬網址:url</h3>
-                    <h3 id="contentup">上線:up</h3>
+                <h3 id="contentusername">請選擇帳號</h3>
+                    <h3 id="contentname"></h3>
+                    <h3 id="contentmoney"></h3>
+                    <h3 id="contenturl"></h3>
+                    <h3 id="contentup"></h3>
                     <div id="qrcode"></div>
                </div>
                 <div id="update">編輯</div>
@@ -165,7 +167,11 @@ if(isset($_SESSION['name'])){
                 contentname.innerHTML = "真實姓名:"+showname;
                 contentmoney.innerHTML = "餘額:"+showmoney;
                 contenturl.innerHTML = "專屬網址"+"http://www.partyboxxxxxx.com/register.php?code="+showurl;
-                contentup.innerHTML = "上線"+showup;
+                if(showup==""){
+                    contentup.innerHTML = "上線:無";
+                }else{
+                    contentup.innerHTML = "上線:"+showup;
+                }
                 $('#qrcode').html('');
                 $('#qrcode').qrcode({
                     width: 120,

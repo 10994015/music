@@ -662,7 +662,8 @@ footer .footerlist > .list > p {
         justify-content: center;
     }
     .content > .right > .popular{
-        display: none;
+        /* display: none; */
+        margin-bottom: 30px;
     }
 
 }
