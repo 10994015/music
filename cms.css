@@ -1,0 +1,81 @@
+.cms{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#max{
+    width:400px;
+    height: 600px;
+    border:1px #000 solid;
+    list-style: none;
+    overflow-y: scroll;
+    margin:0 10px;
+}
+.middle{
+    margin-left:20px;
+    list-style:none;
+}
+.middle > .middlelist{
+    cursor: pointer;
+    /* margin:6px 0; */
+    display: flex;
+    /* justify-content:  center; */
+    flex-direction: column;
+    min-height: 30px;
+    line-height: 30px;
+
+}
+.middle > .middlelist>.middleusername{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.middle > .middlelist >.middleusername > i{
+    display: none;
+    margin-right: 5px;
+    line-height: 30px;
+    
+}
+.min{
+    margin-left:30px;
+    display: none;
+}
+
+.usercontent{
+    width:700px;
+    height: 300px;
+    margin:0 10px;
+    border:1px #000 solid;
+    display: flex;
+    position: relative;
+    padding: 15px;
+}
+.opacitytext{
+    opacity: 0;
+    overflow: hidden;
+    width:0;
+    height: 0;
+}
+#update{
+    width:120px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color:#fff;
+    background-color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom:20px;
+}
+#qrcode{
+    width:120px;
+    height: 120px;
+}
+.uname:hover{
+    border-bottom: 1px #000 solid;
+}

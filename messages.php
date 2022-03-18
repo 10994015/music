@@ -95,7 +95,7 @@ if (isset($_SESSION['name'])) {
                 </div>
                 <div class="post" id="post4">
                 <?php foreach($RS_mb3 as $item){ ?>
-                        <a href="javascript:;" class="list">
+                        <a href="./postcontent.php?id=<?php echo $item['id'];?>" class="list">
                             <h4 class="class"><?php if($item['post']==1){echo "活動";}elseif($item['post']==2){echo "系統";}else{echo "客服";} ?></h4>
                             <div class="date"><?php echo $item['time']; ?></div>
                             <h4 class="title"><?php echo $item['title']; ?></h4>
