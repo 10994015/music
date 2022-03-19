@@ -5,7 +5,7 @@
         <div class="footerlist">
             <div class="list">
                 <h3>創造價值</h3>
-                <p>除了用戶僅需要以小資本額即可參與之外<br/>資產比例用來從而<a href="./memberCenter.php" style="color:#fff">增加收入</a><br/>並且減少市場上詐欺或詐騙等非法案例</p>
+                <p>除了用戶僅需要以小資本額即可參與之外<br/>資產比例用來從而<a href="./memberdata.php" style="color:#fff">增加收入</a><br/>並且減少市場上詐欺或詐騙等非法案例</p>
             </div>
             <div class="list">
                 <h3>隱私權聲明</h3>
