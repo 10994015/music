@@ -131,7 +131,7 @@ if (isset($_SESSION['name'])) {
             <li>
                 <p class="userbtn"><?php
                 echo $row_user['username']."-".$row_user['name'];
-                echo "<span class='opacitytext'>".$row_user['username']."-".$row_user['name']."-".$row_user['money']."-".$row_user['chkcode']."</span>";
+                echo "<span class='opacitytext'>".$row_user['username']."-".$row_user['name']."-".$row_user['money']."-".$row_user['chkcode']."-".$row_user['mail']."</span>";
                 ?></p>
                 <ul class="down">
                     <?php
