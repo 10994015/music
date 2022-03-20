@@ -140,7 +140,7 @@ if (isset($_SESSION['name'])) {
                         }else{
                             foreach($row_RS as $item){
                                 echo "<li class='userbtn'>".$item['username']."-".$item['name'];
-                                echo "<span class='opacitytext'>".$item['username']."-".$item['name']."-".$item['money']."-".$item['chkcode']."</span></li>";
+                                echo "<span class='opacitytext'>".$item['username']."-".$item['name']."-".$item['money']."-".$item['chkcode']."-".$item['mail']."</span></li>";
                             }
                         }
                     ?>
@@ -155,6 +155,7 @@ if (isset($_SESSION['name'])) {
     <div class="memberdata">
         <p id="showusername">請選擇帳號</p>
         <p id="showname"></p>
+        <p id="showphone"></p>
         <p id="showmoney"></p>
         <p id="showurl"></p>
         <p id="qrcode"></p>
@@ -173,6 +174,7 @@ if (isset($_SESSION['name'])) {
     const showname = document.getElementById('showname');
     const showmoney = document.getElementById('showmoney');
     const showurl = document.getElementById('showurl');
+    const showphone = document.getElementById('showphone');
 
     const showData = (e)=>{
         // console.log(e.target);
@@ -180,15 +182,18 @@ if (isset($_SESSION['name'])) {
         showname.innerText = "";
         showmoney.innerText = "";
         showurl.innerText = "";
+        showphone.innerText = "";
         let u = e.target.querySelector('.opacitytext');
         console.log(u.innerText.split('-'));
         let username = u.innerText.split('-')[0].trim();
         let name = u.innerText.split('-')[1].trim();
         let money = u.innerText.split('-')[2].trim();
         let url = u.innerText.split('-')[3].trim();
+        let phone = u.innerText.split('-')[4].trim();
         showusername.innerText = "帳號:" + username;
         showname.innerText = "姓名:" + name;
         showmoney.innerText = "餘額:" + money;
+        showphone.innerText = "手機:" + phone;
         showurl.innerText = "專屬網址:http://www.partyboxxxxxx.com/register.php?code=" + url;
         $('#qrcode').html('');
                 $('#qrcode').qrcode({

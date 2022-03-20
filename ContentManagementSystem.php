@@ -65,7 +65,7 @@ if(isset($_SESSION['name'])){
                                         <i class="fa-solid fa-caret-right icon" ></i>
                                         <!-- <i class="fa-solid fa-caret-down"></i> -->
                                         <?php echo $item2['username']."-".$item2['name']; ?>
-                                        <?php echo "<span class='opacitytext'>-".$item2['money']."-".$item2['chkcode']."-".$item2['up']."</span>"; ?>
+                                        <?php echo "<span class='opacitytext'>-".$item2['money']."-".$item2['chkcode']."-".$item2['up']."-".$item2['mail']."</span>"; ?>
                                     </h5>
                                      <?php 
                                      $sql_upname = "";
@@ -92,7 +92,7 @@ if(isset($_SESSION['name'])){
                                         foreach($row__up_RS as $upname){
                                             echo "<li class='uname'>";
                                             echo $upname['username']."-".$upname['name'];
-                                            echo "<span class='opacitytext'>-".$upname['money']."-".$upname['chkcode']."-".$upname['up']."</span>";
+                                            echo "<span class='opacitytext'>-".$upname['money']."-".$upname['chkcode']."-".$upname['up']."-".$upname['mail']."</span>";
                                             echo "</li>";
                                         }
                                         echo "</ul>";
@@ -123,6 +123,7 @@ if(isset($_SESSION['name'])){
                <div>
                 <h3 id="contentusername">請選擇帳號</h3>
                     <h3 id="contentname"></h3>
+                    <h3 id="contentphone"></h3>
                     <h3 id="contentmoney"></h3>
                     <h3 id="contenturl"></h3>
                     <h3 id="contentup"></h3>
@@ -132,7 +133,7 @@ if(isset($_SESSION['name'])){
             </div>
        </div>
     <?php }else{ ?>
-        <h1>您沒有權限進入此網站!!!</h1>
+        <h1 style="color:#fff;text-align:center;width:100%">您沒有權限進入此網站!!!</h1>
     <?php  }?>
     </div>
 
@@ -153,6 +154,7 @@ if(isset($_SESSION['name'])){
             let showmoney = null;
             let showurl = null;
             let showup = null;
+            let showphone = null;
             for(let n=0;n<mname.length;n++){
                 mname[n].addEventListener('click',postdata);
             }
@@ -163,9 +165,11 @@ if(isset($_SESSION['name'])){
                 showmoney = this.innerText.split("-")[2];
                 showurl = this.innerText.split("-")[3];
                 showup = this.innerText.split("-")[4];
+                showphone = this.innerText.split("-")[5];
                 contentusername.innerHTML = "帳號:"+showusername;
                 contentname.innerHTML = "真實姓名:"+showname;
                 contentmoney.innerHTML = "餘額:"+showmoney;
+                contentphone.innerHTML = "手機:" + showphone;
                 contenturl.innerHTML = "專屬網址"+"http://www.partyboxxxxxx.com/register.php?code="+showurl;
                 if(showup==""){
                     contentup.innerHTML = "上線:無";
