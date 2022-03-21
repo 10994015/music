@@ -59,6 +59,10 @@ body{
     margin-left:30px;
     display: none;
 }
+.min > li{
+    font-size: 14px;
+    list-style: circle;
+}
 
 .usercontent{
     width:700px;
