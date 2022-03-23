@@ -90,7 +90,7 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            任務網站:<a href="https://bit.ly/372UlWl ">https://bit.ly/372UlWl </a>
+            任務網站:<a href="https://bit.ly/372UlWl ">https://bit.ly/3t9Gru7 </a>
         </div>
     </div>
 
