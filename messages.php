@@ -2,7 +2,6 @@
 session_start();
 include_once('./conn.php');
 
-if (isset($_SESSION['name'])) {
 
     try{
         $sql_str = "SELECT * FROM messages ORDER BY id DESC";
@@ -112,9 +111,3 @@ if (isset($_SESSION['name'])) {
 </body>
 </html>
 
-<?php
-}else{
-
-?>
-<?php include_once('./error.php') ?>
-<?php } ?>
