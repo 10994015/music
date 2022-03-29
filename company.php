@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('./conn.php');
-
+if (isset($_SESSION['name'])) {
 
 ?>
 
@@ -61,3 +61,10 @@ Party GO 成立於2020年,從原本單純的PTC 網站(只有點擊廣告功能)
     </script>
 </body>
 </html>
+
+<?php
+}else{
+
+?>
+<?php include_once('./error.php') ?>
+<?php } ?>
