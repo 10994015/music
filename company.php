@@ -27,6 +27,7 @@ include_once('./conn.php');
     }
     .company p{
         width:700px;
+        line-height: 1.5;
     }
     </style>
 </head>
