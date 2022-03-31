@@ -52,7 +52,7 @@ include_once('./conn.php');
     <div class="content">
     <?php include_once('./left.php'); ?>
         <div class="contact">
-            <h2>聯繫客服</h2>
+            <h2>帳號保護</h2>
             <img src="./images/0024.png" alt="">
             <p>LINE ID: oep18541</p>
         </div>

@@ -26,7 +26,7 @@
                 </div>    
                 <div class="item">
                     <img src="./images/0014.png" alt="">
-                    <a href="./changepwd.php">帳號保護機制</a>
+                    <a href="./protect.php">帳號保護機制</a>
                 </div>  
             </div>
             <div class="guide">
