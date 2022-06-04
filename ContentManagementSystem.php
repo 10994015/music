@@ -22,7 +22,6 @@ if(isset($_SESSION['name'])){
 
       if(isset($_GET['username']) && $_GET['username'] !==""){
         $getname = $_GET['username'];
-        echo "ok".$getname;
       }
 ?>
 
@@ -41,6 +40,17 @@ if(isset($_SESSION['name'])){
     .userlist{
         border-bottom:1px #000 solid;
     }
+    .cmsphone{
+        display: block;
+        width:120px;
+        height: 30px;
+        background-color: #222;
+        color:#fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        font-weight: 600;
+    }
     </style>
 </head>
 <body>
@@ -56,6 +66,7 @@ if(isset($_SESSION['name'])){
                         <input type="text" placeholder="搜尋..." id="searchbox">
                         <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
+                    <a href="./cmsphone.php" class="cmsphone">查看所有手機</a>
                         <li>
                             <h4><?php echo $item['username']."-".$item['name']; ?></h4>
                             <ul class="middle">
