@@ -14,11 +14,7 @@
                 </div>
                 <div class="item">
                     <img src="./images/0011.png" alt="">
-                    <a href="./earn.php">點擊賺取</a>
-                </div>
-                <div class="item">
-                    <img src="./images/0010.png" alt="">
-                    <a href="./gold.php">儲存金幣</a>
+                    <a href="./earn.php">任務接取</a>
                 </div>
                 <div class="item">
                     <img src="./images/0013.png" alt="">
@@ -31,5 +27,17 @@
             </div>
             <div class="guide">
                 <h2>快速升級指南</h2>
+                <div class="list">
+                    <p>猜歌任務</p>
+                    <p>看影片任務</p>
+                    <p>聽歌曲任務</p>
+                    <p>接單任務</p>
+                    <p>派單任務</p>
+                    <p>跳舞任務</p>
+                    <p>唱歌任務</p>
+                    <p>走路任務</p>
+                    <p>打字任務</p>
+                </div>
+
             </div>
         </div>

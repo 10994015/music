@@ -54,7 +54,7 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            <h4>您的餘額為0，請先儲值!</h4>
+            <h4>您尚未支付1000開通帳號，請先聯繫客服開通！</h4>
             <div class="boxbottom"><a href="javascript:;" id="storeBtn">確認</a></div>
         </div>
     </div>
@@ -90,7 +90,7 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            任務網站:<a href="https://bit.ly/372UlWl ">https://bit.ly/3t9Gru7 </a>
+            任務網站:<a href="https://bit.ly/3zieeTM  ">https://bit.ly/3zieeTM  </a>
         </div>
     </div>
 

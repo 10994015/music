@@ -208,6 +208,17 @@ header > #menu{
     text-align: center;
     padding: 15px 0;
 }
+.content > .left > .guide > .list{
+    display: flex;
+    flex-direction: column;
+    color:#fff;
+    align-items: center;
+}
+.content > .left > .guide > .list > p{
+    margin:5px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
 .content > .center {
     width:700px;
     margin: 0 15px;
