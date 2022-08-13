@@ -326,6 +326,7 @@ header > #menu{
 }
 .content > .center > .hotspot > .hotspotBox > .listbottom > .list{
     animation: user 80s infinite linear;
+    height: 40px;
 }
 @keyframes user {
     0%{

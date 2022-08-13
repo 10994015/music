@@ -1,10 +1,12 @@
 .earn {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 150px 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
     width:700px;
     margin: 0 auto;
     margin-top: 50px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
 }
 .earn > a, .earn > div{
     display: block;
@@ -20,7 +22,7 @@
     cursor: pointer;
 }
 .earn > img{
-    width:180px;
+    width:150px;
     cursor: pointer;
 }
 .orderModule,.taskModule,.urlModule,.otherModule,.alreadyModule,.cardModule,.storeModule{
@@ -216,8 +218,8 @@
 @media screen and (max-width:768px){
     .earn {
         display: grid;
-        grid-template-columns: 200px 200px ;
-        grid-template-rows: 200px 200px 200px 200px;
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px 150px;
         width:100%;
         align-items: center;
         justify-items: center;  
@@ -231,8 +233,11 @@
 @media screen and (max-width:768px){
     .earn {
         display: grid;
-        grid-template-columns: 150px 150px ;
+        grid-template-columns: 150px 150px 150px;
         grid-template-rows: 150px 150px 150px 150px;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        width:100%;
         
     }
     .earn > a, .earn > div{
@@ -248,4 +253,27 @@
         font-size: 20px;
         cursor: pointer;
     }
+}
+
+@media screen and (max-width:560px){
+    .earn {
+        display: grid;
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 150px 150px 150px 150px;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        
+    }
+ 
+}
+@media screen and (max-width:380px){
+    .earn {
+        display: grid;
+        grid-template-columns:  100%;
+        grid-template-rows: 150px 150px 150px 150px;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        
+    }
+ 
 }

@@ -27,12 +27,18 @@ if (isset($_SESSION['name'])) {
     <div class="content">
     <?php include_once('./left.php'); ?>
        <div class="earn">
-           <img src="./images/Q1.png" alt="" id="ordersBtn">
-           <img src="./images/Q2.png" alt="" class="otherClassBtn">
-           <img src="./images/Q3.png" alt="" class="otherClassBtn">
-           <img src="./images/Q4.png" alt="" class="otherClassBtn">
-           <img src="./images/Q5.png" alt="" class="otherClassBtn">
-           <img src="./images/Q6.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q1.png" alt="" id="ordersBtn">
+           <img src="./images/Q/Q2.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q3.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q4.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q5.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q6.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q7.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q8.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q9.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q10.png" alt="" class="otherClassBtn">
+           <img src="./images/Q/Q11.png" alt="" class="otherClassBtn">
+          
        </div>
     </div>
     <div class="orderModule" id="orderModule">
