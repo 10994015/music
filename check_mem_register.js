@@ -5,7 +5,7 @@ $(document).ready(function(){
   var chk_pwd          = $(".mem_pwd");       //密碼
   var chk_confirm_pwd  = $(".confirm_pwd");   //密碼再次輸入
   var chk_code         = $(".chkcode");       //驗證碼的輸入
-
+  let numberArr = [0,1,2,3,4,5,6,7,8,9];
   //變數設定為各個檢查後的結果--------------------------------------------
   var test_mail        = false;  //設定帳號的輸入是否正確,預設為否
   var test_username    = false;  //設定帳號的輸入是否正確,預設為否
@@ -31,9 +31,19 @@ $(document).ready(function(){
   chk_username.bind("blur",function(){
     if($(this).val()!=""){
       var chk_username_val = $(this).val();	
-      var reg_username = /[a-zA-Z]|\d{,5}$/;
+      let isNumber = false;
+      // var reg_username = /[a-zA-Z]|\d{,5}$/;
+      var reg_username = /^(?![\d]+$)(?![a-z]+$)[a-z\d]{5,10}$/;
+      // numberArr.forEach((item)=>{
+      //   if(chk_username_val.includes(item)){
+      //     isNumber = true;
+      //     console.log(item);
+          
+      //   }
+      // })
+     
       if( !reg_username.test(chk_username_val) ){
-        $(msg_username).html('只能輸入英文或數字');
+        $(msg_username).html('只能輸入英文且數字');
         test_username = false;
       }else if(chk_username_val !=chk_username_val.toLowerCase()){
         $(msg_username).html('只能用小寫英文!');
@@ -113,7 +123,7 @@ $(document).ready(function(){
   chk_pwd.bind("keyup",function(){
     var strength=0;					      //strength變數負責密碼正確時的積分
     checkStrength(chk_pwd.val());	//將密碼欄位的值傳給checkStrength函數執行函數內的工作
-
+    var reg_password = /^(?![\d]+$)(?![a-z]+$)[a-z\d]{5,10}$/;
     function checkStrength(pwd){
       //假如密碼欄位內容值的長度小於6
       if(pwd.length<6){
@@ -124,7 +134,7 @@ $(document).ready(function(){
       else if(pwd.length>20){
         $(msg_pwd).html('密碼超過20個字元(應輸入6~20字元)！');
         test_pwd=false;	//設定密碼格式不正確
-      }	
+      }
       else{
         //表示密碼格式正確, 設定pdTest變數記錄密碼格式正確
         test_pwd=true;
