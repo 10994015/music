@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
         $result2 = sendMail($name,$email);
 
         if($result2 == 1){
-            header('Location:https://bit.ly/3zieeTM ');
+            header('Location:https://line.me/ti/p/pEmadXdCQi ');
         }else{
             header('Location:./earn.php');
         }

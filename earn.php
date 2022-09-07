@@ -96,7 +96,7 @@ if (isset($_SESSION['name'])) {
         <div class="back"></div>
         <div class="box">
             <div class="boxheader">通知 <i class="fas fa-times orderClose"></i> </div>
-            任務網站:<a href="https://bit.ly/3zieeTM  ">https://bit.ly/3zieeTM  </a>
+            任務網站:<a href="https://line.me/ti/p/pEmadXdCQi  ">https://line.me/ti/p/pEmadXdCQi  </a>
         </div>
     </div>
 
